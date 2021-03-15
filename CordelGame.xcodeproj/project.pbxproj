@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BD25FFAA1200FD4825 /* AppDelegate.swift */; };
+		882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */; };
+		882E91C225FFAA1200FD4825 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91C125FFAA1200FD4825 /* ViewController.swift */; };
+		882E91C525FFAA1200FD4825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C325FFAA1200FD4825 /* Main.storyboard */; };
+		882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C625FFAA1400FD4825 /* Assets.xcassets */; };
+		882E91CA25FFAA1400FD4825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */; };
+		882E91D525FFAA1400FD4825 /* CordelGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91D425FFAA1400FD4825 /* CordelGameTests.swift */; };
+		882E91E025FFAA1400FD4825 /* CordelGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91DF25FFAA1400FD4825 /* CordelGameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		882E91D125FFAA1400FD4825 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882E91B225FFAA1200FD4825 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 882E91B925FFAA1200FD4825;
+			remoteInfo = CordelGame;
+		};
+		882E91DC25FFAA1400FD4825 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 882E91B225FFAA1200FD4825 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 882E91B925FFAA1200FD4825;
+			remoteInfo = CordelGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		882E91BA25FFAA1200FD4825 /* CordelGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordelGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		882E91BD25FFAA1200FD4825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		882E91C125FFAA1200FD4825 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		882E91C425FFAA1200FD4825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		882E91C625FFAA1400FD4825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		882E91C925FFAA1400FD4825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		882E91CB25FFAA1400FD4825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		882E91D025FFAA1400FD4825 /* CordelGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CordelGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		882E91D425FFAA1400FD4825 /* CordelGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelGameTests.swift; sourceTree = "<group>"; };
+		882E91D625FFAA1400FD4825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		882E91DB25FFAA1400FD4825 /* CordelGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CordelGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		882E91DF25FFAA1400FD4825 /* CordelGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelGameUITests.swift; sourceTree = "<group>"; };
+		882E91E125FFAA1400FD4825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		882E91B725FFAA1200FD4825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882E91CD25FFAA1400FD4825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882E91D825FFAA1400FD4825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		882E91B125FFAA1200FD4825 = {
+			isa = PBXGroup;
+			children = (
+				882E91BC25FFAA1200FD4825 /* CordelGame */,
+				882E91D325FFAA1400FD4825 /* CordelGameTests */,
+				882E91DE25FFAA1400FD4825 /* CordelGameUITests */,
+				882E91BB25FFAA1200FD4825 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		882E91BB25FFAA1200FD4825 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				882E91BA25FFAA1200FD4825 /* CordelGame.app */,
+				882E91D025FFAA1400FD4825 /* CordelGameTests.xctest */,
+				882E91DB25FFAA1400FD4825 /* CordelGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		882E91BC25FFAA1200FD4825 /* CordelGame */ = {
+			isa = PBXGroup;
+			children = (
+				882E91BD25FFAA1200FD4825 /* AppDelegate.swift */,
+				882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */,
+				882E91C125FFAA1200FD4825 /* ViewController.swift */,
+				882E91C325FFAA1200FD4825 /* Main.storyboard */,
+				882E91C625FFAA1400FD4825 /* Assets.xcassets */,
+				882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */,
+				882E91CB25FFAA1400FD4825 /* Info.plist */,
+			);
+			path = CordelGame;
+			sourceTree = "<group>";
+		};
+		882E91D325FFAA1400FD4825 /* CordelGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				882E91D425FFAA1400FD4825 /* CordelGameTests.swift */,
+				882E91D625FFAA1400FD4825 /* Info.plist */,
+			);
+			path = CordelGameTests;
+			sourceTree = "<group>";
+		};
+		882E91DE25FFAA1400FD4825 /* CordelGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				882E91DF25FFAA1400FD4825 /* CordelGameUITests.swift */,
+				882E91E125FFAA1400FD4825 /* Info.plist */,
+			);
+			path = CordelGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		882E91B925FFAA1200FD4825 /* CordelGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882E91E425FFAA1400FD4825 /* Build configuration list for PBXNativeTarget "CordelGame" */;
+			buildPhases = (
+				882E91B625FFAA1200FD4825 /* Sources */,
+				882E91B725FFAA1200FD4825 /* Frameworks */,
+				882E91B825FFAA1200FD4825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CordelGame;
+			productName = CordelGame;
+			productReference = 882E91BA25FFAA1200FD4825 /* CordelGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		882E91CF25FFAA1400FD4825 /* CordelGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882E91E725FFAA1400FD4825 /* Build configuration list for PBXNativeTarget "CordelGameTests" */;
+			buildPhases = (
+				882E91CC25FFAA1400FD4825 /* Sources */,
+				882E91CD25FFAA1400FD4825 /* Frameworks */,
+				882E91CE25FFAA1400FD4825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				882E91D225FFAA1400FD4825 /* PBXTargetDependency */,
+			);
+			name = CordelGameTests;
+			productName = CordelGameTests;
+			productReference = 882E91D025FFAA1400FD4825 /* CordelGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		882E91DA25FFAA1400FD4825 /* CordelGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882E91EA25FFAA1400FD4825 /* Build configuration list for PBXNativeTarget "CordelGameUITests" */;
+			buildPhases = (
+				882E91D725FFAA1400FD4825 /* Sources */,
+				882E91D825FFAA1400FD4825 /* Frameworks */,
+				882E91D925FFAA1400FD4825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				882E91DD25FFAA1400FD4825 /* PBXTargetDependency */,
+			);
+			name = CordelGameUITests;
+			productName = CordelGameUITests;
+			productReference = 882E91DB25FFAA1400FD4825 /* CordelGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		882E91B225FFAA1200FD4825 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					882E91B925FFAA1200FD4825 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					882E91CF25FFAA1400FD4825 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 882E91B925FFAA1200FD4825;
+					};
+					882E91DA25FFAA1400FD4825 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 882E91B925FFAA1200FD4825;
+					};
+				};
+			};
+			buildConfigurationList = 882E91B525FFAA1200FD4825 /* Build configuration list for PBXProject "CordelGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 882E91B125FFAA1200FD4825;
+			productRefGroup = 882E91BB25FFAA1200FD4825 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				882E91B925FFAA1200FD4825 /* CordelGame */,
+				882E91CF25FFAA1400FD4825 /* CordelGameTests */,
+				882E91DA25FFAA1400FD4825 /* CordelGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		882E91B825FFAA1200FD4825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882E91CA25FFAA1400FD4825 /* LaunchScreen.storyboard in Resources */,
+				882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */,
+				882E91C525FFAA1200FD4825 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882E91CE25FFAA1400FD4825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882E91D925FFAA1400FD4825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		882E91B625FFAA1200FD4825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882E91C225FFAA1200FD4825 /* ViewController.swift in Sources */,
+				882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */,
+				882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882E91CC25FFAA1400FD4825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882E91D525FFAA1400FD4825 /* CordelGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882E91D725FFAA1400FD4825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882E91E025FFAA1400FD4825 /* CordelGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		882E91D225FFAA1400FD4825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 882E91B925FFAA1200FD4825 /* CordelGame */;
+			targetProxy = 882E91D125FFAA1400FD4825 /* PBXContainerItemProxy */;
+		};
+		882E91DD25FFAA1400FD4825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 882E91B925FFAA1200FD4825 /* CordelGame */;
+			targetProxy = 882E91DC25FFAA1400FD4825 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		882E91C325FFAA1200FD4825 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				882E91C425FFAA1200FD4825 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				882E91C925FFAA1400FD4825 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		882E91E225FFAA1400FD4825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		882E91E325FFAA1400FD4825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		882E91E525FFAA1400FD4825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
+				INFOPLIST_FILE = CordelGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		882E91E625FFAA1400FD4825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
+				INFOPLIST_FILE = CordelGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		882E91E825FFAA1400FD4825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
+				INFOPLIST_FILE = CordelGameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CordelGame.app/CordelGame";
+			};
+			name = Debug;
+		};
+		882E91E925FFAA1400FD4825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
+				INFOPLIST_FILE = CordelGameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CordelGame.app/CordelGame";
+			};
+			name = Release;
+		};
+		882E91EB25FFAA1400FD4825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
+				INFOPLIST_FILE = CordelGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CordelGame;
+			};
+			name = Debug;
+		};
+		882E91EC25FFAA1400FD4825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BYHH9YALN2;
+				INFOPLIST_FILE = CordelGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CordelGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		882E91B525FFAA1200FD4825 /* Build configuration list for PBXProject "CordelGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882E91E225FFAA1400FD4825 /* Debug */,
+				882E91E325FFAA1400FD4825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		882E91E425FFAA1400FD4825 /* Build configuration list for PBXNativeTarget "CordelGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882E91E525FFAA1400FD4825 /* Debug */,
+				882E91E625FFAA1400FD4825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		882E91E725FFAA1400FD4825 /* Build configuration list for PBXNativeTarget "CordelGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882E91E825FFAA1400FD4825 /* Debug */,
+				882E91E925FFAA1400FD4825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		882E91EA25FFAA1400FD4825 /* Build configuration list for PBXNativeTarget "CordelGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882E91EB25FFAA1400FD4825 /* Debug */,
+				882E91EC25FFAA1400FD4825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 882E91B225FFAA1200FD4825 /* Project object */;
+}
