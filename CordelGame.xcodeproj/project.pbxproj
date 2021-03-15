@@ -10,11 +10,11 @@
 		882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BD25FFAA1200FD4825 /* AppDelegate.swift */; };
 		882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */; };
 		882E91C225FFAA1200FD4825 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91C125FFAA1200FD4825 /* ViewController.swift */; };
-		882E91C525FFAA1200FD4825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C325FFAA1200FD4825 /* Main.storyboard */; };
 		882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C625FFAA1400FD4825 /* Assets.xcassets */; };
 		882E91CA25FFAA1400FD4825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */; };
 		882E91D525FFAA1400FD4825 /* CordelGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91D425FFAA1400FD4825 /* CordelGameTests.swift */; };
 		882E91E025FFAA1400FD4825 /* CordelGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91DF25FFAA1400FD4825 /* CordelGameUITests.swift */; };
+		882E91F825FFAF6E00FD4825 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 882E91F725FFAF6E00FD4825 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		882E91BD25FFAA1200FD4825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		882E91C125FFAA1200FD4825 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		882E91C425FFAA1200FD4825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		882E91C625FFAA1400FD4825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		882E91C925FFAA1400FD4825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		882E91CB25FFAA1400FD4825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		882E91DB25FFAA1400FD4825 /* CordelGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CordelGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		882E91DF25FFAA1400FD4825 /* CordelGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelGameUITests.swift; sourceTree = "<group>"; };
 		882E91E125FFAA1400FD4825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		882E91F725FFAF6E00FD4825 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,7 @@
 		882E91B125FFAA1200FD4825 = {
 			isa = PBXGroup;
 			children = (
+				882E91F725FFAF6E00FD4825 /* .swiftlint.yml */,
 				882E91BC25FFAA1200FD4825 /* CordelGame */,
 				882E91D325FFAA1400FD4825 /* CordelGameTests */,
 				882E91DE25FFAA1400FD4825 /* CordelGameUITests */,
@@ -102,7 +103,6 @@
 				882E91BD25FFAA1200FD4825 /* AppDelegate.swift */,
 				882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */,
 				882E91C125FFAA1200FD4825 /* ViewController.swift */,
-				882E91C325FFAA1200FD4825 /* Main.storyboard */,
 				882E91C625FFAA1400FD4825 /* Assets.xcassets */,
 				882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */,
 				882E91CB25FFAA1400FD4825 /* Info.plist */,
@@ -138,6 +138,7 @@
 				882E91B625FFAA1200FD4825 /* Sources */,
 				882E91B725FFAA1200FD4825 /* Frameworks */,
 				882E91B825FFAA1200FD4825 /* Resources */,
+				882E91F325FFAD6A00FD4825 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,9 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882E91F825FFAF6E00FD4825 /* .swiftlint.yml in Resources */,
 				882E91CA25FFAA1400FD4825 /* LaunchScreen.storyboard in Resources */,
 				882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */,
-				882E91C525FFAA1200FD4825 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +253,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		882E91F325FFAD6A00FD4825 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		882E91B625FFAA1200FD4825 /* Sources */ = {
@@ -296,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		882E91C325FFAA1200FD4825 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				882E91C425FFAA1200FD4825 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -465,7 +478,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = projects.CordelGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
