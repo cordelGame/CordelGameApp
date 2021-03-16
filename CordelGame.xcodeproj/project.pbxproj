@@ -22,6 +22,8 @@
 		A2AA846A2600E1FD00D24369 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84692600E1FD00D24369 /* GamePlayScene.swift */; };
 		A2AA847B2600EA6700D24369 /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA847A2600EA6700D24369 /* VisualComponent.swift */; };
 		A2AA84862600EB4700D24369 /* VisualComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84852600EB4700D24369 /* VisualComponentTests.swift */; };
+		A2AA84942600F25400D24369 /* LandscapeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84932600F25400D24369 /* LandscapeEntity.swift */; };
+		A2AA84992600F42700D24369 /* LandscapeEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		A2AA84692600E1FD00D24369 /* GamePlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
 		A2AA847A2600EA6700D24369 /* VisualComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponent.swift; sourceTree = "<group>"; };
 		A2AA84852600EB4700D24369 /* VisualComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualComponentTests.swift; sourceTree = "<group>"; };
+		A2AA84932600F25400D24369 /* LandscapeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeEntity.swift; sourceTree = "<group>"; };
+		A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeEntityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 				882E91D425FFAA1400FD4825 /* CordelGameTests.swift */,
 				882E91D625FFAA1400FD4825 /* Info.plist */,
 				A2AA84852600EB4700D24369 /* VisualComponentTests.swift */,
+				A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */,
 			);
 			path = CordelGameTests;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				882E92262600D49800FD4825 /* EntitiesEmpty */,
+				A2AA84932600F25400D24369 /* LandscapeEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				A2AA84602600E12600D24369 /* GameViewController.swift in Sources */,
 				A2AA84652600E16700D24369 /* GameController.swift in Sources */,
 				A2AA846A2600E1FD00D24369 /* GamePlayScene.swift in Sources */,
+				A2AA84942600F25400D24369 /* LandscapeEntity.swift in Sources */,
 				A2AA847B2600EA6700D24369 /* VisualComponent.swift in Sources */,
 				882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */,
 				882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */,
@@ -372,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2AA84992600F42700D24369 /* LandscapeEntityTests.swift in Sources */,
 				882E91D525FFAA1400FD4825 /* CordelGameTests.swift in Sources */,
 				A2AA84862600EB4700D24369 /* VisualComponentTests.swift in Sources */,
 			);
