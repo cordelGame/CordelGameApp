@@ -118,6 +118,7 @@
 				882E920E2600D35A00FD4825 /* Entities */,
 				882E920D2600D34D00FD4825 /* Scenes */,
 				882E91C625FFAA1400FD4825 /* Assets.xcassets */,
+				882E91CB25FFAA1400FD4825 /* Info.plist */,
 			);
 			path = CordelGame;
 			sourceTree = "<group>";
@@ -170,7 +171,6 @@
 				882E91BD25FFAA1200FD4825 /* AppDelegate.swift */,
 				882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */,
 				882E91C825FFAA1400FD4825 /* LaunchScreen.storyboard */,
-				882E91CB25FFAA1400FD4825 /* Info.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
