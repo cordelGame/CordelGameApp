@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0BC7882602279B0046A146 /* HealthComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BC7872602279B0046A146 /* HealthComponentTests.swift */; };
+		1A28D4B4260392880099C03C /* AnimateCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B3260392880099C03C /* AnimateCharacter.swift */; };
+		1A28D4B9260396160099C03C /* AnimationCharacterComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */; };
+		1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */; };
+		1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */; };
+		1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */; };
 		882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BD25FFAA1200FD4825 /* AppDelegate.swift */; };
 		882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */; };
 		882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C625FFAA1400FD4825 /* Assets.xcassets */; };
@@ -42,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0BC7872602279B0046A146 /* HealthComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponentTests.swift; sourceTree = "<group>"; };
+		1A28D4B3260392880099C03C /* AnimateCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCharacter.swift; sourceTree = "<group>"; };
+		1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponentTests.swift; sourceTree = "<group>"; };
+		1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
+		1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
+		1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponent.swift; sourceTree = "<group>"; };
 		882E91BA25FFAA1200FD4825 /* CordelGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordelGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		882E91BD25FFAA1200FD4825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +145,8 @@
 				882E91D425FFAA1400FD4825 /* CordelGameTests.swift */,
 				882E91D625FFAA1400FD4825 /* Info.plist */,
 				A2AA84852600EB4700D24369 /* VisualComponentTests.swift */,
+				1A0BC7872602279B0046A146 /* HealthComponentTests.swift */,
+				1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */,
 			);
 			path = CordelGameTests;
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				882E92262600D49800FD4825 /* EntitiesEmpty */,
+				1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -166,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				A2AA847A2600EA6700D24369 /* VisualComponent.swift */,
+				1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */,
+				1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				882E92142600D45E00FD4825 /* ModelsEmpty */,
+				1A28D4B3260392880099C03C /* AnimateCharacter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,11 +378,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2AA84602600E12600D24369 /* GameViewController.swift in Sources */,
+				1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */,
+				1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */,
 				A2AA84652600E16700D24369 /* GameController.swift in Sources */,
+				1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */,
 				A2AA846A2600E1FD00D24369 /* GamePlayScene.swift in Sources */,
 				A2AA847B2600EA6700D24369 /* VisualComponent.swift in Sources */,
 				882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */,
 				882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */,
+				1A28D4B4260392880099C03C /* AnimateCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +394,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A28D4B9260396160099C03C /* AnimationCharacterComponentTests.swift in Sources */,
 				882E91D525FFAA1400FD4825 /* CordelGameTests.swift in Sources */,
 				A2AA84862600EB4700D24369 /* VisualComponentTests.swift in Sources */,
+				1A0BC7882602279B0046A146 /* HealthComponentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
