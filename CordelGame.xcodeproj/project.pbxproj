@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D4BCBC2600F7A20020B03E /* DrawingControlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4BCBB2600F7A20020B03E /* DrawingControlEntity.swift */; };
 		882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BD25FFAA1200FD4825 /* AppDelegate.swift */; };
 		882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */; };
 		882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 882E91C625FFAA1400FD4825 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56D4BCBB2600F7A20020B03E /* DrawingControlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingControlEntity.swift; sourceTree = "<group>"; };
 		882E91BA25FFAA1200FD4825 /* CordelGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordelGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		882E91BD25FFAA1200FD4825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		882E91BF25FFAA1200FD4825 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				882E92262600D49800FD4825 /* EntitiesEmpty */,
+				56D4BCBB2600F7A20020B03E /* DrawingControlEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				A2AA847B2600EA6700D24369 /* VisualComponent.swift in Sources */,
 				882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */,
 				882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */,
+				56D4BCBC2600F7A20020B03E /* DrawingControlEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CordelGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CordelGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
