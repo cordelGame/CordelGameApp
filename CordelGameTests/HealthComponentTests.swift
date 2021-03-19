@@ -21,17 +21,6 @@ class HealthComponentTests: XCTestCase {
     XCTAssertNotNil(sut)
   }
 
-  func test_isAlive_false() {
-    let mock = HealthComponent(maxHealth: 0)
-    let isAlive = mock.isAlive()
-    XCTAssertFalse(isAlive)
-  }
-
-  func test_isAlive_true() {
-    let isAlive = sut.isAlive()
-    XCTAssertTrue(isAlive)
-  }
-
   func test_hit_equalOne() {
     sut.hit()
     XCTAssertEqual(sut.health, 1)

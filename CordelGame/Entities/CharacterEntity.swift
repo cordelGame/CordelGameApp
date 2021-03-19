@@ -17,9 +17,17 @@ class CharacterEntity: GKEntity {
     let healthComponent = HealthComponent(maxHealth: health)
     let animationComponent = AnimationCharacterComponent(visualComponent: visualComponent)
 
+    healthComponent.kill = deathCharacter
+
     self.addComponent(visualComponent)
     self.addComponent(healthComponent)
     self.addComponent(animationComponent)
+  }
+
+  func deathCharacter () {
+    if let animationComponent = self.component(ofType: AnimationCharacterComponent.self) {
+      animationComponent.animateCharacter(typeAnimation: .death)
+    }
   }
 
   required init?(coder: NSCoder) {

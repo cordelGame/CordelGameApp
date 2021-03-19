@@ -11,6 +11,7 @@ import GameplayKit
 class HealthComponent: GKComponent {
 
   var health: Int
+  var kill: (() -> Void)?
 
   init(maxHealth: Int) {
     self.health = maxHealth
@@ -24,13 +25,13 @@ class HealthComponent: GKComponent {
     } else {
       health = 0
     }
+    notAlive()
   }
 
-  func isAlive() -> Bool {
-    if health != 0 {
-      return true
+  func notAlive() {
+    if health == 0 {
+      kill?()
     }
-    return false
   }
 
   required init?(coder: NSCoder) {
