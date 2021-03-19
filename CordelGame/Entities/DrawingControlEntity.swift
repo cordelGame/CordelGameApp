@@ -15,19 +15,22 @@ class DrawingControlEntity: GKEntity {
     }()
 
     let button1VisualComponent: VisualComponent = {
-        let visualComponent = VisualComponent(assetName: "botao1")
+        let visualComponent = VisualComponent(assetName: "botao")
         return visualComponent
     }()
+
     let button2VisualComponent: VisualComponent = {
-        let visualComponent = VisualComponent(assetName: "botao2")
+        let visualComponent = VisualComponent(assetName: "botao")
         return visualComponent
     }()
+
     let button3VisualComponent: VisualComponent = {
-        let visualComponent = VisualComponent(assetName: "botao3")
+        let visualComponent = VisualComponent(assetName: "botao")
         return visualComponent
     }()
+
     let button4VisualComponent: VisualComponent = {
-        let visualComponent = VisualComponent(assetName: "botao4")
+        let visualComponent = VisualComponent(assetName: "botao")
         return visualComponent
     }()
 
