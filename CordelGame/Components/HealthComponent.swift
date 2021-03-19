@@ -19,7 +19,11 @@ class HealthComponent: GKComponent {
   }
 
   func hit() {
-    health -= 1 // inserir o isAlive
+    if health > 0 {
+      health -= 1
+    } else {
+      health = 0
+    }
   }
 
   func isAlive() -> Bool {

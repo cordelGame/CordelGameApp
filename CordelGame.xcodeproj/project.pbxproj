@@ -10,6 +10,7 @@
 		1A0BC7882602279B0046A146 /* HealthComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BC7872602279B0046A146 /* HealthComponentTests.swift */; };
 		1A28D4B4260392880099C03C /* AnimateCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B3260392880099C03C /* AnimateCharacter.swift */; };
 		1A28D4B9260396160099C03C /* AnimationCharacterComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */; };
+		1A8381762604E35C007E251E /* CharacterEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8381752604E35C007E251E /* CharacterEntityTests.swift */; };
 		1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */; };
 		1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */; };
 		1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */; };
@@ -51,6 +52,7 @@
 		1A0BC7872602279B0046A146 /* HealthComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponentTests.swift; sourceTree = "<group>"; };
 		1A28D4B3260392880099C03C /* AnimateCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCharacter.swift; sourceTree = "<group>"; };
 		1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponentTests.swift; sourceTree = "<group>"; };
+		1A8381752604E35C007E251E /* CharacterEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntityTests.swift; sourceTree = "<group>"; };
 		1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
 		1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
 		1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponent.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				A2AA84852600EB4700D24369 /* VisualComponentTests.swift */,
 				1A0BC7872602279B0046A146 /* HealthComponentTests.swift */,
 				1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */,
+				1A8381752604E35C007E251E /* CharacterEntityTests.swift */,
 			);
 			path = CordelGameTests;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			files = (
 				1A28D4B9260396160099C03C /* AnimationCharacterComponentTests.swift in Sources */,
 				882E91D525FFAA1400FD4825 /* CordelGameTests.swift in Sources */,
+				1A8381762604E35C007E251E /* CharacterEntityTests.swift in Sources */,
 				A2AA84862600EB4700D24369 /* VisualComponentTests.swift in Sources */,
 				1A0BC7882602279B0046A146 /* HealthComponentTests.swift in Sources */,
 			);

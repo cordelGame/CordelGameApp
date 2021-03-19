@@ -37,6 +37,13 @@ class HealthComponentTests: XCTestCase {
     XCTAssertEqual(sut.health, 1)
   }
 
+  func test_health_notNegative() {
+    sut.hit()
+    sut.hit()
+    sut.hit()
+    XCTAssertEqual(sut.health, 0)
+  }
+
   override func tearDown() {
     sut = nil
   }
