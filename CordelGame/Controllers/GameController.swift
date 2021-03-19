@@ -10,6 +10,11 @@ import SpriteKit
 
 class GameController {
     func handleScene() -> SKScene {
-        return GamePlayScene()
+        return GamePlayScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
     }
+}
+
+enum ScreenSize {
+    static let height = UIScreen.main.bounds.height
+    static let width = UIScreen.main.bounds.width
 }

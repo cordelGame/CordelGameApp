@@ -9,14 +9,11 @@ import GameplayKit
 
 class LandscapeEntity: GKEntity {
 
-    let visualComponent: VisualComponent = {
-        let visualComponent = VisualComponent(assetName: "background")
-        return visualComponent
-    }()
-
-    override init() {
+    init(assetName: String) {
         super.init()
-        self.addComponent(self.visualComponent)
+        
+        let visualComponent = VisualComponent(assetName: "background")
+        self.addComponent(visualComponent)
     }
 
     required init?(coder: NSCoder) {
