@@ -16,8 +16,21 @@ class GamePlayScene: SKScene {
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
     let rectangle: TimeBarEntity = TimeBarEntity("rectangle")
     let drawingControl: DrawingControlEntity = DrawingControlEntity()
+    
+    let victoyCondition = ["button1", "button2", "button3", "button4"]
+    var testerVictory: [String] = []
+    
+    var button1 = SKSpriteNode()
+    var button2 = SKSpriteNode()
+    var button3 = SKSpriteNode()
+    var button4 = SKSpriteNode()
+    
+    var initialPoint = CGPoint()
+    var finalPoint = CGPoint()
+    var shape = SKShapeNode()
 
     override func didMove(to view: SKView) {
+        self.view?.showsNodeCount = true
         super.didMove(to: view)
         self.backgroundColor = UIColor(named: "backgroundColor")!
         
@@ -39,6 +52,11 @@ class GamePlayScene: SKScene {
         
         self.addChild(rectangleSprite.node)
         self.addChild(blackBarSprite.node)
+        
+        button1 = drawingControl.button1VisualComponent.node
+        button2 = drawingControl.button2VisualComponent.node
+        button3 = drawingControl.button3VisualComponent.node
+        button4 = drawingControl.button4VisualComponent.node
         
         landScapeSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
         landScapeSprite.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
@@ -69,14 +87,142 @@ class GamePlayScene: SKScene {
                 
         let positionXButtonOne = drawingControl.controlVisualComponent.node.frame.midX - (drawingControl.controlVisualComponent.node.size.width/4) - drawingControl.button1VisualComponent.node.frame.width/4
         drawingControl.button1VisualComponent.node.position = CGPoint(x: positionXButtonOne, y: drawingControl.controlVisualComponent.node.frame.midY)
+        drawingControl.button1VisualComponent.node.name = "button1"
         
         let positionYButtonTwo = drawingControl.controlVisualComponent.node.frame.midY + ((drawingControl.controlVisualComponent.node.size.height/4)) + drawingControl.button2VisualComponent.node.frame.width/4
         drawingControl.button2VisualComponent.node.position = CGPoint(x: drawingControl.controlVisualComponent.node.frame.midX, y: positionYButtonTwo)
+        drawingControl.button2VisualComponent.node.name = "button2"
         
         let positionXButtonThree = drawingControl.controlVisualComponent.node.frame.midX + (drawingControl.controlVisualComponent.node.size.width/4) + drawingControl.button3VisualComponent.node.frame.width/4
         drawingControl.button3VisualComponent.node.position = CGPoint(x: positionXButtonThree, y: drawingControl.controlVisualComponent.node.frame.midY)
+        drawingControl.button3VisualComponent.node.name = "button3"
 
         let positionYButtonFour = drawingControl.controlVisualComponent.node.frame.midY - ((drawingControl.controlVisualComponent.node.size.height/4)) - drawingControl.button4VisualComponent.node.frame.width/4
         drawingControl.button4VisualComponent.node.position = CGPoint(x: drawingControl.controlVisualComponent.node.frame.midX, y: positionYButtonFour)
+        drawingControl.button4VisualComponent.node.name = "button4"
+        
+        shape.strokeColor = .black
+        shape.lineWidth = 5
+        addChild(shape)
+        shape.name = "shape"
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let touch = touches.first {
+            let position = touch.location(in: self)
+            let nodes = self.nodes(at: position)
+            if nodes[0].name?.contains("button1") ?? false {
+                initialPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
+                self.testerVictory.append("button1")
+            }
+            if nodes[0].name?.contains("button2") ?? false {
+                initialPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
+                self.testerVictory.append("button2")
+            }
+            if nodes[0].name?.contains("button3") ?? false {
+                initialPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
+                self.testerVictory.append("button3")
+            }
+            if nodes[0].name?.contains("button4") ?? false {
+                initialPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
+                self.testerVictory.append("button4")
+            }
+        }
+        
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if checkPosition() {
+            let path = CGMutablePath()
+            path.move(to: initialPoint)
+            
+            if let touch = touches.first {
+                let position = touch.location(in: self)
+                let nodes = self.nodes(at: position)
+                finalPoint = position
+                if nodes[0].name?.contains("button1") ?? false {
+                    if initialPoint != CGPoint(x: button1.frame.midX, y: button1.frame.midY) {
+                        finalPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
+                        self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
+                        self.testerVictory.append("button1")
+                        initialPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
+                    }
+                    
+                } else if nodes[0].name?.contains("button2") ?? false {
+                    if initialPoint != CGPoint(x: button2.frame.midX, y: button2.frame.midY) {
+                        finalPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
+                        self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
+                        self.testerVictory.append("button2")
+                        initialPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
+                    }
+                } else if nodes[0].name?.contains("button3") ?? false {
+                    if initialPoint != CGPoint(x: button3.frame.midX, y: button3.frame.midY) {
+                        finalPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
+                        self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
+                        self.testerVictory.append("button3")
+                        initialPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
+                    }
+                } else if nodes[0].name?.contains("button4") ?? false {
+                    if initialPoint != CGPoint(x: button4.frame.midX, y: button4.frame.midY) {
+                        finalPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
+                        self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
+                        self.testerVictory.append("button4")
+                        initialPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
+                    }
+                    
+                }
+                path.addLine(to: finalPoint)
+                shape.path = path
+                
+            }
+        }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if checkPosition() {
+            shape.path = nil
+            shape.removeAllChildren()
+        }
+        self.checkVictory()
+    }
+    
+    func checkPosition() -> Bool {
+        let pos1 = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
+        let pos2 = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
+        let pos3 = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
+        let pos4 = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
+        
+        if initialPoint == pos1 || initialPoint == pos2 || initialPoint == pos3 || initialPoint == pos4 {
+            return true
+        }
+        return false
+    }
+
+    func addLine(initialPoint: CGPoint, finalPoint: CGPoint) {
+        let line = SKShapeNode()
+        line.strokeColor = .black
+        line.lineWidth = 5
+        
+        let path = CGMutablePath()
+        path.move(to: initialPoint)
+        path.addLine(to: finalPoint)
+        line.path = path
+        shape.addChild(line)
+        line.name = "line"
+        
+    }
+    
+    func checkVictory() -> Bool {
+        print(testerVictory)
+        if victoyCondition == testerVictory {
+            print("ganhoooou")
+            testerVictory = []
+            return true
+        }
+        testerVictory = []
+        print("iihhhhh")
+        return false
     }
 }
