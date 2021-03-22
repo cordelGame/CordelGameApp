@@ -185,7 +185,7 @@ class GamePlayScene: SKScene {
             shape.path = nil
             shape.removeAllChildren()
         }
-        self.checkVictory()
+        _ = self.checkVictory()
     }
     
     func checkPosition() -> Bool {
@@ -215,7 +215,6 @@ class GamePlayScene: SKScene {
     }
     
     func checkVictory() -> Bool {
-        print(testerVictory)
         if victoyCondition == testerVictory {
             print("ganhoooou")
             testerVictory = []
