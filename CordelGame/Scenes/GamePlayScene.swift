@@ -28,6 +28,7 @@ class GamePlayScene: SKScene {
     var initialPoint = CGPoint()
     var finalPoint = CGPoint()
     var shape = SKShapeNode()
+    var gameOver = false
 
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
@@ -53,6 +54,20 @@ class GamePlayScene: SKScene {
         self.addChild(rectangleSprite.node)
         self.addChild(blackBarSprite.node)
         
+        guard let cangaceiraHealth = cangaceira.component(ofType: HealthComponent.self) else { return }
+        
+        guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
+        blackBarAction.timeResize(timeDificult: 10)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            blackBarAction.stop()
+        }
+        
+        blackBarAction.animationStopRun = {
+            cangaceiraHealth.hit()
+            self.gameOver = true
+        }
+
         button1 = drawingControl.button1VisualComponent.node
         button2 = drawingControl.button2VisualComponent.node
         button3 = drawingControl.button3VisualComponent.node

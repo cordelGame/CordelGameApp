@@ -28,4 +28,8 @@ class TimeComponent: GKComponent {
             self.animationStopRun?()
         }
     }
+    
+    func stop () {
+        node.removeAllActions()
+    }
 }
