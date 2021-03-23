@@ -57,15 +57,12 @@ class GamePlayScene: SKScene {
         guard let cangaceiraHealth = cangaceira.component(ofType: HealthComponent.self) else { return }
         
         guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
-        blackBarAction.timeResize(timeDificult: 10)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            blackBarAction.stop()
-        }
+        blackBarAction.timeResize(timeDificult: 5)
         
         blackBarAction.animationStopRun = {
             cangaceiraHealth.hit()
             self.gameOver = true
+            blackBarSprite.node.size.width = self.frame.width
         }
 
         button1 = drawingControl.button1VisualComponent.node
@@ -200,7 +197,16 @@ class GamePlayScene: SKScene {
             shape.path = nil
             shape.removeAllChildren()
         }
-        _ = self.checkVictory()
+        guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
+        guard let enemyHealth = enemy.component(ofType: HealthComponent.self) else { return }
+        if self.checkVictory() {
+            blackBarAction.stop(width: self.frame.width)
+            blackBarAction.timeResize(timeDificult: 5)
+            enemyHealth.hit()
+            if enemyHealth.notAlive() {
+                blackBarAction.stop(width: self.frame.width)
+            }
+        }
     }
     
     func checkPosition() -> Bool {
@@ -231,12 +237,10 @@ class GamePlayScene: SKScene {
     
     func checkVictory() -> Bool {
         if victoyCondition == testerVictory {
-            print("ganhoooou")
             testerVictory = []
             return true
         }
         testerVictory = []
-        print("iihhhhh")
         return false
     }
 }

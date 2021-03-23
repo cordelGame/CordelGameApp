@@ -29,7 +29,8 @@ class TimeComponent: GKComponent {
         }
     }
     
-    func stop () {
+    func stop (width: CGFloat) {
         node.removeAllActions()
+        node.size.width = width
     }
 }
