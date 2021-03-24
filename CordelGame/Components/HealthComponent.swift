@@ -36,6 +36,10 @@ class HealthComponent: GKComponent {
         return false
     }
     
+    func setHelth(newHealth: Int) {
+        self.health = newHealth
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
