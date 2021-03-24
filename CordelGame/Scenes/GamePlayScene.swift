@@ -12,13 +12,14 @@ class GamePlayScene: SKScene {
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "personagem", health: 1)
-    let enemy: CharacterEntity = CharacterEntity(assetName: "cobra", health: 2)
+    var enemy: CharacterEntity! = nil
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
     let rectangle: TimeBarEntity = TimeBarEntity("rectangle")
     let drawingControl: DrawingControlEntity = DrawingControlEntity()
     
     let victoyCondition = ["button1", "button2", "button3", "button4"]
     var testerVictory: [String] = []
+    var enemyLevel: EnemiesLevel1 = .calango
     
     var button1 = SKSpriteNode()
     var button2 = SKSpriteNode()
@@ -29,6 +30,16 @@ class GamePlayScene: SKScene {
     var finalPoint = CGPoint()
     var shape = SKShapeNode()
     var gameOver = false
+    
+    func nextEnemy() -> VisualComponent {
+        let configEnemy = self.enemyLevel.getEnemy()
+        self.enemy = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health)
+        guard let enemySprite = enemy.component(ofType: VisualComponent.self) else {fatalError()}
+        enemySprite.node.anchorPoint = CGPoint(x: 1, y: 0)
+        enemySprite.node.size.width = self.frame.width * configEnemy.widthMultiplier
+        enemySprite.node.size.height = self.frame.height * configEnemy.heightMultiplier
+        return enemySprite
+    }
 
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
@@ -37,7 +48,8 @@ class GamePlayScene: SKScene {
         
         guard let landScapeSprite = landScape.component(ofType: VisualComponent.self) else {fatalError()}
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
-        guard let enemySprite = enemy.component(ofType: VisualComponent.self) else {fatalError()}
+        // guard let enemySprite = enemyCobra.component(ofType: VisualComponent.self) else {fatalError()}
+        let enemySprite = nextEnemy()
         guard let blackBarSprite = blackBar.component(ofType: VisualComponent.self) else {fatalError()}
         guard let rectangleSprite = rectangle.component(ofType: VisualComponent.self) else {fatalError()}
         
@@ -79,10 +91,7 @@ class GamePlayScene: SKScene {
         cangaceiraSprite.node.size.width = self.frame.width * 0.24532
         cangaceiraSprite.node.size.height = self.frame.height * 0.31749
         
-        enemySprite.node.anchorPoint = CGPoint(x: 1, y: 0)
         enemySprite.node.position = CGPoint(x: landScapeSprite.node.frame.maxX - 5, y: landScapeSprite.node.frame.minY + 5)
-        enemySprite.node.size.width = self.frame.width * 0.6658
-        enemySprite.node.size.height = self.frame.height * 0.1814
         
         rectangleSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
         rectangleSprite.node.position = CGPoint(x: self.frame.minX, y: landScapeSprite.node.frame.minY)
@@ -205,6 +214,7 @@ class GamePlayScene: SKScene {
             enemyHealth.hit()
             if enemyHealth.notAlive() {
                 blackBarAction.stop(width: self.frame.width)
+                self.nextEnemy()
             }
         }
     }
