@@ -164,18 +164,22 @@ class GamePlayScene: SKScene {
             if nodes[0].name?.contains("button1") ?? false {
                 initialPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
                 self.testerVictory.append("button1")
+                self.tapped()
             }
             if nodes[0].name?.contains("button2") ?? false {
                 initialPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
                 self.testerVictory.append("button2")
+                self.tapped()
             }
             if nodes[0].name?.contains("button3") ?? false {
                 initialPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
                 self.testerVictory.append("button3")
+                self.tapped()
             }
             if nodes[0].name?.contains("button4") ?? false {
                 initialPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
                 self.testerVictory.append("button4")
+                self.tapped()
             }
         }
         
@@ -197,6 +201,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button1")
                         initialPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
+                        self.tapped()
                     }
                     
                 } else if nodes[0].name?.contains("button2") ?? false {
@@ -205,6 +210,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button2")
                         initialPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
+                        self.tapped()
                     }
                 } else if nodes[0].name?.contains("button3") ?? false {
                     if initialPoint != CGPoint(x: button3.frame.midX, y: button3.frame.midY) {
@@ -212,6 +218,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button3")
                         initialPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
+                        self.tapped()
                     }
                 } else if nodes[0].name?.contains("button4") ?? false {
                     if initialPoint != CGPoint(x: button4.frame.midX, y: button4.frame.midY) {
@@ -219,6 +226,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button4")
                         initialPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
+                        self.tapped()
                     }
                     
                 }
@@ -286,5 +294,10 @@ class GamePlayScene: SKScene {
     func gameOver() {
         cangaceiraHelthComponent.hit()
         // tela de gameOver
+    }
+
+    func tapped() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
 }
