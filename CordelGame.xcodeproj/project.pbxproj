@@ -14,6 +14,9 @@
 		1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */; };
 		1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */; };
 		1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */; };
+		566392B2260E0F210054B59C /* DrawComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B1260E0F210054B59C /* DrawComponent.swift */; };
+		566392B7260E10E90054B59C /* CordeisLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B6260E10E90054B59C /* CordeisLevel1.swift */; };
+		566392BC260E2D460054B59C /* CordeisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392BB260E2D460054B59C /* CordeisData.swift */; };
 		56D4BCBC2600F7A20020B03E /* DrawingControlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4BCBB2600F7A20020B03E /* DrawingControlEntity.swift */; };
 		880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F705C2603738200CD3E74 /* TimeComponent.swift */; };
 		882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BD25FFAA1200FD4825 /* AppDelegate.swift */; };
@@ -63,6 +66,9 @@
 		1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
 		1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
 		1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponent.swift; sourceTree = "<group>"; };
+		566392B1260E0F210054B59C /* DrawComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawComponent.swift; sourceTree = "<group>"; };
+		566392B6260E10E90054B59C /* CordeisLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisLevel1.swift; sourceTree = "<group>"; };
+		566392BB260E2D460054B59C /* CordeisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisData.swift; sourceTree = "<group>"; };
 		56D4BCBB2600F7A20020B03E /* DrawingControlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingControlEntity.swift; sourceTree = "<group>"; };
 		880F705C2603738200CD3E74 /* TimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeComponent.swift; sourceTree = "<group>"; };
 		882E91BA25FFAA1200FD4825 /* CordelGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CordelGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +212,7 @@
 				880F705C2603738200CD3E74 /* TimeComponent.swift */,
 				1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */,
 				1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */,
+				566392B1260E0F210054B59C /* DrawComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -234,6 +241,8 @@
 				882E92142600D45E00FD4825 /* ModelsEmpty */,
 				1A28D4B3260392880099C03C /* AnimateCharacter.swift */,
 				886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */,
+				566392B6260E10E90054B59C /* CordeisLevel1.swift */,
+				566392BB260E2D460054B59C /* CordeisData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,12 +410,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566392BC260E2D460054B59C /* CordeisData.swift in Sources */,
 				886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */,
 				880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */,
 				A2AA84602600E12600D24369 /* GameViewController.swift in Sources */,
 				A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */,
 				1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */,
 				1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */,
+				566392B7260E10E90054B59C /* CordeisLevel1.swift in Sources */,
 				A2AA84652600E16700D24369 /* GameController.swift in Sources */,
 				1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */,
 				A2AA846A2600E1FD00D24369 /* GamePlayScene.swift in Sources */,
@@ -416,6 +427,7 @@
 				882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */,
 				882E91C025FFAA1200FD4825 /* SceneDelegate.swift in Sources */,
 				1A28D4B4260392880099C03C /* AnimateCharacter.swift in Sources */,
+				566392B2260E0F210054B59C /* DrawComponent.swift in Sources */,
 				56D4BCBC2600F7A20020B03E /* DrawingControlEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
