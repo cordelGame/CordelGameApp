@@ -11,7 +11,7 @@ import XCTest
 class LandscapeEntityTests: XCTestCase {
 
     func test_create_notNil() {
-        let visualComponent = LandscapeEntity()
+      let visualComponent = LandscapeEntity(assetName: "background")
 
         XCTAssertNotNil(visualComponent)
     }

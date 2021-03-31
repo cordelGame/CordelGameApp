@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 // swiftlint:disable line_length
 
 class GamePlayScene: SKScene {
@@ -16,6 +17,7 @@ class GamePlayScene: SKScene {
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
     let rectangle: TimeBarEntity = TimeBarEntity("rectangle")
     let drawingControl: DrawingControlEntity = DrawingControlEntity()
+    let sound: SoundComponent = SoundComponent()
     
     let victoyCondition = ["button1", "button2", "button3", "button4"]
     var testerVictory: [String] = []
@@ -105,6 +107,8 @@ class GamePlayScene: SKScene {
         shape.lineWidth = 5
         addChild(shape)
         shape.name = "shape"
+
+        sound.configureSound(soundStyle: .background)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
