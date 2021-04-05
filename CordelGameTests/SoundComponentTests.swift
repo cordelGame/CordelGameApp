@@ -23,13 +23,6 @@ class SoundComponentTests: XCTestCase {
     XCTAssertNil(sut.sound, "Sound instanciado por conta da URL Nula")
   }
 
-  func test_configureSound_isPlaying() {
-    sut.configureSound(soundStyle: .background)
-
-    XCTAssertNotNil(sut.sound, "Sound instanciado por conta de uma URL Válida")
-    XCTAssertEqual(sut.sound.isPlaying, true)
-  }
-
   func test_configureSound_invalidateFile() {
     sut.configureSound(soundStyle: .corruptedFile)
 
@@ -46,6 +39,22 @@ class SoundComponentTests: XCTestCase {
     sut.configureSound(soundStyle: .gameOver)
 
     XCTAssertEqual(sut.sound.numberOfLoops, 0)
+  }
+
+  func test_playSound_isPlaying() {
+    sut.configureSound(soundStyle: .background)
+    sut.playSound()
+
+    XCTAssertNotNil(sut.sound, "Sound instanciado por conta de uma URL Válida")
+    XCTAssertEqual(sut.sound.isPlaying, true)
+  }
+
+  func test_pauseSound_isNotPlaying() {
+    sut.configureSound(soundStyle: .background)
+    sut.pauseSound()
+
+    XCTAssertNotNil(sut.sound, "Sound instanciado por conta de uma URL Válida")
+    XCTAssertEqual(sut.sound.isPlaying, false)
   }
 
   override func tearDown() {

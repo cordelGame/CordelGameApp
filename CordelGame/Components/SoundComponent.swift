@@ -23,11 +23,18 @@ class SoundComponent: GKComponent {
         return
       }
       sound = try AVAudioPlayer(contentsOf: URL(string: urlString)!)
-      sound.play()
       sound.numberOfLoops = (soundStyle == TypeSound.background) ? -1 : 0
 
     } catch {
       print("URL ERROR")
     }
+  }
+
+  func playSound() {
+    sound.play()
+  }
+
+  func pauseSound() {
+    sound.pause()
   }
 }

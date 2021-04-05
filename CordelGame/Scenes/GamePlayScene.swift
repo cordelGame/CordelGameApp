@@ -109,6 +109,7 @@ class GamePlayScene: SKScene {
         shape.name = "shape"
 
         sound.configureSound(soundStyle: .background)
+        sound.playSound()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
