@@ -12,9 +12,8 @@ class GamePlayScene: SKScene {
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1)
-    
     lazy var enemy: CharacterEntity = {
-        let configEnemy = self.enemyLevel.getEnemy()
+        let configEnemy = self.gameManager.getEnemy()
         var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health)
 
         guard let enemySprite = characterEntity.component(ofType: VisualComponent.self) else {fatalError()}
@@ -26,7 +25,11 @@ class GamePlayScene: SKScene {
         return characterEntity
     }()
     
-    let cordelEntity = CordelEntity(assetName: "Cordel")
+    lazy var cordelEntity: CordelEntity = {
+        let cordel = self.gameManager.getCordel()
+        let cordelEntity = CordelEntity(assetName: cordel.name)
+        return cordelEntity
+    }()
 
     var cordelVisualComponent: VisualComponent {
         return cordelEntity.component(ofType: VisualComponent.self)!
@@ -41,7 +44,7 @@ class GamePlayScene: SKScene {
     }
 
     var enemyHelthComponent: HealthComponent {
-        return enemy.component(ofType: HealthComponent.self)!
+    return enemy.component(ofType: HealthComponent.self)!
     }
 
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
@@ -50,7 +53,6 @@ class GamePlayScene: SKScene {
     
     let victoyCondition = ["button1", "button2", "button3", "button4"]
     var testerVictory: [String] = []
-    var enemyLevel: EnemiesLevel1 = .calango
     
     var button1 = SKSpriteNode()
     var button2 = SKSpriteNode()
@@ -60,9 +62,11 @@ class GamePlayScene: SKScene {
     var initialPoint = CGPoint()
     var finalPoint = CGPoint()
     var shape = SKShapeNode()
+    
+    var gameManager: GameManager = GameManager(enemyLevel: EnemiesLevel1.calango)
 
     func nextEnemy() {
-        let configEnemy = self.enemyLevel.getEnemy()
+        let configEnemy = self.gameManager.getEnemy()
         
         self.enemyVisualComponent.changeAsset(assetName: configEnemy.name)
         self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
@@ -238,22 +242,29 @@ class GamePlayScene: SKScene {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let checkVictory = gameManager.checkWinCondition(userInput: self.testerVictory)
+        
         if checkPosition() {
             shape.path = nil
             shape.removeAllChildren()
         }
     
         guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
-    
-        if self.checkVictory() {
+        
+        if checkVictory {
             blackBarAction.stop(width: self.frame.width)
             enemyHelthComponent.hit()
-
+            
             if enemyHelthComponent.notAlive() {
                 self.nextEnemy()
             }
+            
+            let cordel = self.gameManager.getCordel()
+            cordelVisualComponent.changeAsset(assetName: cordel.name)
+            
             blackBarAction.timeResize(timeDificult: 5)
         }
+        self.testerVictory = []
     }
     
     func checkPosition() -> Bool {
@@ -280,15 +291,6 @@ class GamePlayScene: SKScene {
         shape.addChild(line)
         line.name = "line"
         
-    }
-    
-    func checkVictory() -> Bool {
-        if victoyCondition == testerVictory || victoyCondition.reversed() == testerVictory { // To do: deixar generico
-            testerVictory = []
-            return true
-        }
-        testerVictory = []
-        return false
     }
     
     func gameOver() {
