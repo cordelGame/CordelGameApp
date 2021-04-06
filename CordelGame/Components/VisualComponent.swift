@@ -20,7 +20,10 @@ class VisualComponent: GKComponent {
     }
 
     func changeAsset(assetName: String) {
-      node = SKSpriteNode(imageNamed: assetName)
+        let newAsset = SKTexture(imageNamed: assetName)
+
+        let changeAssetAction = SKAction.setTexture(newAsset, resize: true)
+        node.run(changeAssetAction)
     }
 
     required init?(coder: NSCoder) {

@@ -12,14 +12,46 @@ import AVFoundation
 class GamePlayScene: SKScene {
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
-    let cangaceira: CharacterEntity = CharacterEntity(assetName: "personagem", health: 1)
-    let enemy: CharacterEntity = CharacterEntity(assetName: "cobra", health: 2)
+    let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1)
+    
+    lazy var enemy: CharacterEntity = {
+        let configEnemy = self.enemyLevel.getEnemy()
+        var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health)
+
+        guard let enemySprite = characterEntity.component(ofType: VisualComponent.self) else {fatalError()}
+
+        enemySprite.node.anchorPoint = CGPoint(x: 1, y: 0)
+        enemySprite.node.size.width = self.frame.width * configEnemy.widthMultiplier
+        enemySprite.node.size.height = self.frame.height * configEnemy.heightMultiplier
+
+        return characterEntity
+    }()
+    
+    let cordelEntity = CordelEntity(assetName: "Cordel")
+
+    var cordelVisualComponent: VisualComponent {
+        return cordelEntity.component(ofType: VisualComponent.self)!
+    }
+
+    var cangaceiraHelthComponent: HealthComponent {
+        return cangaceira.component(ofType: HealthComponent.self)!
+    }
+
+    var enemyVisualComponent: VisualComponent {
+        return enemy.component(ofType: VisualComponent.self)!
+    }
+
+    var enemyHelthComponent: HealthComponent {
+        return enemy.component(ofType: HealthComponent.self)!
+    }
+
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
     let rectangle: TimeBarEntity = TimeBarEntity("rectangle")
     let drawingControl: DrawingControlEntity = DrawingControlEntity()
     
     let victoyCondition = ["button1", "button2", "button3", "button4"]
     var testerVictory: [String] = []
+    var enemyLevel: EnemiesLevel1 = .calango
     
     var button1 = SKSpriteNode()
     var button2 = SKSpriteNode()
@@ -30,19 +62,30 @@ class GamePlayScene: SKScene {
     var finalPoint = CGPoint()
     var shape = SKShapeNode()
 
+    func nextEnemy() {
+        let configEnemy = self.enemyLevel.getEnemy()
+        
+        self.enemyVisualComponent.changeAsset(assetName: configEnemy.name)
+        self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
+        self.enemyVisualComponent.node.size.width = self.frame.width * configEnemy.widthMultiplier
+        self.enemyVisualComponent.node.size.height = self.frame.height * configEnemy.heightMultiplier
+        
+        self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
+    }
+
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
         super.didMove(to: view)
         self.backgroundColor = UIColor(named: "backgroundColor")!
-        
+    
         guard let landScapeSprite = landScape.component(ofType: VisualComponent.self) else {fatalError()}
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
-        guard let enemySprite = enemy.component(ofType: VisualComponent.self) else {fatalError()}
+
         guard let blackBarSprite = blackBar.component(ofType: VisualComponent.self) else {fatalError()}
         guard let rectangleSprite = rectangle.component(ofType: VisualComponent.self) else {fatalError()}
         
         self.addChild(landScapeSprite.node)
-        self.addChild(enemySprite.node)
+        self.addChild(enemyVisualComponent.node)
         self.addChild(cangaceiraSprite.node)
 
         self.addChild(drawingControl.controlVisualComponent.node)
@@ -53,7 +96,13 @@ class GamePlayScene: SKScene {
         
         self.addChild(rectangleSprite.node)
         self.addChild(blackBarSprite.node)
+        self.addChild(self.cordelVisualComponent.node)
+
+        guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
+        blackBarAction.timeResize(timeDificult: 5)
         
+        blackBarAction.animationStopRun = self.gameOver
+
         button1 = drawingControl.button1VisualComponent.node
         button2 = drawingControl.button2VisualComponent.node
         button3 = drawingControl.button3VisualComponent.node
@@ -65,13 +114,10 @@ class GamePlayScene: SKScene {
         
         cangaceiraSprite.node.anchorPoint = CGPoint(x: 0, y: 0)
         cangaceiraSprite.node.position = CGPoint(x: landScapeSprite.node.frame.minX + 30, y: landScapeSprite.node.frame.minY + 5)
-        cangaceiraSprite.node.size.width = self.frame.width * 0.24532
-        cangaceiraSprite.node.size.height = self.frame.height * 0.31749
+        cangaceiraSprite.node.size.width = self.frame.width * 0.3691
+        cangaceiraSprite.node.size.height = self.frame.height * 0.3196
         
-        enemySprite.node.anchorPoint = CGPoint(x: 1, y: 0)
-        enemySprite.node.position = CGPoint(x: landScapeSprite.node.frame.maxX - 5, y: landScapeSprite.node.frame.minY + 5)
-        enemySprite.node.size.width = self.frame.width * 0.6658
-        enemySprite.node.size.height = self.frame.height * 0.1814
+        enemyVisualComponent.node.position = CGPoint(x: landScapeSprite.node.frame.maxX - 5, y: landScapeSprite.node.frame.minY + 5)
         
         rectangleSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
         rectangleSprite.node.position = CGPoint(x: self.frame.minX, y: landScapeSprite.node.frame.minY)
@@ -102,8 +148,11 @@ class GamePlayScene: SKScene {
         drawingControl.button4VisualComponent.node.position = CGPoint(x: drawingControl.controlVisualComponent.node.frame.midX, y: positionYButtonFour)
         drawingControl.button4VisualComponent.node.name = "button4"
         
+        self.cordelVisualComponent.node.anchorPoint = CGPoint(x: 0.5, y: 1)
+        self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 50)
+
         shape.strokeColor = .black
-        shape.lineWidth = 5
+        shape.lineWidth = 8
         addChild(shape)
         shape.name = "shape"
 
@@ -117,18 +166,22 @@ class GamePlayScene: SKScene {
             if nodes[0].name?.contains("button1") ?? false {
                 initialPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
                 self.testerVictory.append("button1")
+                self.tapped()
             }
             if nodes[0].name?.contains("button2") ?? false {
                 initialPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
                 self.testerVictory.append("button2")
+                self.tapped()
             }
             if nodes[0].name?.contains("button3") ?? false {
                 initialPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
                 self.testerVictory.append("button3")
+                self.tapped()
             }
             if nodes[0].name?.contains("button4") ?? false {
                 initialPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
                 self.testerVictory.append("button4")
+                self.tapped()
             }
         }
         
@@ -150,6 +203,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button1")
                         initialPoint = CGPoint(x: button1.frame.midX, y: button1.frame.midY)
+                        self.tapped()
                     }
                     
                 } else if nodes[0].name?.contains("button2") ?? false {
@@ -158,6 +212,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button2")
                         initialPoint = CGPoint(x: button2.frame.midX, y: button2.frame.midY)
+                        self.tapped()
                     }
                 } else if nodes[0].name?.contains("button3") ?? false {
                     if initialPoint != CGPoint(x: button3.frame.midX, y: button3.frame.midY) {
@@ -165,6 +220,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button3")
                         initialPoint = CGPoint(x: button3.frame.midX, y: button3.frame.midY)
+                        self.tapped()
                     }
                 } else if nodes[0].name?.contains("button4") ?? false {
                     if initialPoint != CGPoint(x: button4.frame.midX, y: button4.frame.midY) {
@@ -172,6 +228,7 @@ class GamePlayScene: SKScene {
                         self.addLine(initialPoint: initialPoint, finalPoint: finalPoint)
                         self.testerVictory.append("button4")
                         initialPoint = CGPoint(x: button4.frame.midX, y: button4.frame.midY)
+                        self.tapped()
                     }
                     
                 }
@@ -187,7 +244,18 @@ class GamePlayScene: SKScene {
             shape.path = nil
             shape.removeAllChildren()
         }
-        _ = self.checkVictory()
+    
+        guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
+    
+        if self.checkVictory() {
+            blackBarAction.stop(width: self.frame.width)
+            enemyHelthComponent.hit()
+
+            if enemyHelthComponent.notAlive() {
+                self.nextEnemy()
+            }
+            blackBarAction.timeResize(timeDificult: 5)
+        }
     }
     
     func checkPosition() -> Bool {
@@ -205,7 +273,7 @@ class GamePlayScene: SKScene {
     func addLine(initialPoint: CGPoint, finalPoint: CGPoint) {
         let line = SKShapeNode()
         line.strokeColor = .black
-        line.lineWidth = 5
+        line.lineWidth = 8
         
         let path = CGMutablePath()
         path.move(to: initialPoint)
@@ -217,13 +285,21 @@ class GamePlayScene: SKScene {
     }
     
     func checkVictory() -> Bool {
-        if victoyCondition == testerVictory {
-            print("ganhoooou")
+        if victoyCondition == testerVictory || victoyCondition.reversed() == testerVictory { // To do: deixar generico
             testerVictory = []
             return true
         }
         testerVictory = []
-        print("iihhhhh")
         return false
+    }
+    
+    func gameOver() {
+        cangaceiraHelthComponent.hit()
+        // tela de gameOver
+    }
+
+    func tapped() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
 }

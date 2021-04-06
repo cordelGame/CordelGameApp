@@ -28,4 +28,9 @@ class TimeComponent: GKComponent {
             self.animationStopRun?()
         }
     }
+    
+    func stop (width: CGFloat) {
+        node.removeAllActions()
+        node.size.width = width
+    }
 }

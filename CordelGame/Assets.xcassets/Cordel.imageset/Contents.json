@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cobra.png",
+      "filename" : "Cordel.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cobra@2x.png",
+      "filename" : "Cordel@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cobra@3x.png",
+      "filename" : "Cordel@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
