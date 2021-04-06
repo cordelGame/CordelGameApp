@@ -12,7 +12,7 @@ class LandscapeEntity: GKEntity {
     init(assetName: String) {
         super.init()
         
-        let visualComponent = VisualComponent(assetName: "background")
+        let visualComponent = VisualComponent(assetName: assetName)
         self.addComponent(visualComponent)
     }
 

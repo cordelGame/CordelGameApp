@@ -11,6 +11,8 @@ import SpriteKit
 class GamePlayScene: SKScene {
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
+    let backgroundEmpty: LandscapeEntity = LandscapeEntity(assetName: "backgroungEmpty")
+
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1)
     lazy var enemy: CharacterEntity = {
         let configEnemy = self.gameManager.getEnemy()
@@ -31,6 +33,10 @@ class GamePlayScene: SKScene {
         return cordelEntity
     }()
 
+    var landScapeVisualComponent: VisualComponent {
+        return landScape.component(ofType: VisualComponent.self)!
+    }
+
     var cordelVisualComponent: VisualComponent {
         return cordelEntity.component(ofType: VisualComponent.self)!
     }
@@ -44,7 +50,7 @@ class GamePlayScene: SKScene {
     }
 
     var enemyHelthComponent: HealthComponent {
-    return enemy.component(ofType: HealthComponent.self)!
+        return enemy.component(ofType: HealthComponent.self)!
     }
 
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
@@ -74,20 +80,23 @@ class GamePlayScene: SKScene {
         self.enemyVisualComponent.node.size.height = self.frame.height * configEnemy.heightMultiplier
         
         self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
+
+        enemyVisualComponent.node.position = CGPoint(x: landScapeVisualComponent.node.frame.maxX + configEnemy.positionX,
+                                                     y: landScapeVisualComponent.node.frame.minY + configEnemy.positionY)
     }
 
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
         super.didMove(to: view)
-        self.backgroundColor = UIColor(named: "backgroundColor")!
-    
-        guard let landScapeSprite = landScape.component(ofType: VisualComponent.self) else {fatalError()}
+
+        guard let backgroundEmptySprite = backgroundEmpty.component(ofType: VisualComponent.self) else {fatalError()}
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
 
         guard let blackBarSprite = blackBar.component(ofType: VisualComponent.self) else {fatalError()}
         guard let rectangleSprite = rectangle.component(ofType: VisualComponent.self) else {fatalError()}
         
-        self.addChild(landScapeSprite.node)
+        self.addChild(backgroundEmptySprite.node)
+        self.addChild(landScapeVisualComponent.node)
         self.addChild(enemyVisualComponent.node)
         self.addChild(cangaceiraSprite.node)
 
@@ -111,19 +120,22 @@ class GamePlayScene: SKScene {
         button3 = drawingControl.button3VisualComponent.node
         button4 = drawingControl.button4VisualComponent.node
         
-        landScapeSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
-        landScapeSprite.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
-        landScapeSprite.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
+        backgroundEmptySprite.node.anchorPoint = CGPoint(x: 0.5, y: 0)
+        backgroundEmptySprite.node.position = CGPoint(x: self.frame.midX, y: self.frame.minY)
+
+        landScapeVisualComponent.node.anchorPoint = CGPoint(x: 0, y: 1)
+        landScapeVisualComponent.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
+        landScapeVisualComponent.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
         
         cangaceiraSprite.node.anchorPoint = CGPoint(x: 0, y: 0)
-        cangaceiraSprite.node.position = CGPoint(x: landScapeSprite.node.frame.minX + 30, y: landScapeSprite.node.frame.minY + 5)
+        cangaceiraSprite.node.position = CGPoint(x: landScapeVisualComponent.node.frame.minX + 30, y: landScapeVisualComponent.node.frame.minY + 5)
         cangaceiraSprite.node.size.width = self.frame.width * 0.3691
         cangaceiraSprite.node.size.height = self.frame.height * 0.3196
         
-        enemyVisualComponent.node.position = CGPoint(x: landScapeSprite.node.frame.maxX - 5, y: landScapeSprite.node.frame.minY + 5)
+        enemyVisualComponent.node.position = CGPoint(x: landScapeVisualComponent.node.frame.maxX - 5, y: landScapeVisualComponent.node.frame.minY + 5)
         
         rectangleSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
-        rectangleSprite.node.position = CGPoint(x: self.frame.minX, y: landScapeSprite.node.frame.minY)
+        rectangleSprite.node.position = CGPoint(x: self.frame.minX, y: landScapeVisualComponent.node.frame.minY)
         rectangleSprite.node.size.width = self.frame.width
         
         blackBarSprite.node.anchorPoint = CGPoint(x: 0, y: 0.5)
@@ -131,9 +143,8 @@ class GamePlayScene: SKScene {
         blackBarSprite.node.size.width = self.frame.width
         
         drawingControl.controlVisualComponent.node.anchorPoint = CGPoint(x: 0.5, y: 1)
-        drawingControl.controlVisualComponent.node.position = CGPoint(x: rectangleSprite.node.frame.midX, y: landScapeSprite.node.frame.minY-5)
+        drawingControl.controlVisualComponent.node.position = CGPoint(x: rectangleSprite.node.frame.midX, y: landScapeVisualComponent.node.frame.minY-5)
         drawingControl.controlVisualComponent.node.size.width = self.frame.width
-        drawingControl.controlVisualComponent.node.size.height = drawingControl.controlVisualComponent.node.size.width
                 
         let positionXButtonOne = drawingControl.controlVisualComponent.node.frame.midX - (drawingControl.controlVisualComponent.node.size.width/4) - drawingControl.button1VisualComponent.node.frame.width/4
         drawingControl.button1VisualComponent.node.position = CGPoint(x: positionXButtonOne, y: drawingControl.controlVisualComponent.node.frame.midY)
@@ -152,7 +163,7 @@ class GamePlayScene: SKScene {
         drawingControl.button4VisualComponent.node.name = "button4"
         
         self.cordelVisualComponent.node.anchorPoint = CGPoint(x: 0.5, y: 1)
-        self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 50)
+        self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 35)
 
         shape.strokeColor = .black
         shape.lineWidth = 8
