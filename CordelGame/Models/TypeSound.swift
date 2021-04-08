@@ -14,7 +14,7 @@ enum TypeSound {
   case knife
   case gameOver
   case win
-  case onça
+  case onca
   case calango
   case cobra
   case soim
@@ -36,8 +36,8 @@ enum TypeSound {
       return AudioFile(title: "gameOver", fileExtension: "mp3")
     case .win:
       return AudioFile(title: "win", fileExtension: "mp3")
-    case .onça:
-      return AudioFile(title: "onça", fileExtension: "wav")
+    case .onca:
+      return AudioFile(title: "onca", fileExtension: "wav")
     case .calango:
       return AudioFile(title: "calango", fileExtension: "wav")
     case .cobra:

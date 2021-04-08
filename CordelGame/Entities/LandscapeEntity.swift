@@ -13,7 +13,10 @@ class LandscapeEntity: GKEntity {
         super.init()
         
         let visualComponent = VisualComponent(assetName: "background")
+        let soundComponent = SoundComponent()
+
         self.addComponent(visualComponent)
+        self.addComponent(soundComponent)
     }
 
     required init?(coder: NSCoder) {

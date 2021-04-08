@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A0BC7882602279B0046A146 /* HealthComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BC7872602279B0046A146 /* HealthComponentTests.swift */; };
+		1A166FA9261DEA4C00A9A1ED /* onca.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A166FA8261DEA4C00A9A1ED /* onca.wav */; };
+		1A166FAE261DEF8400A9A1ED /* cobra.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A166FAD261DEF8400A9A1ED /* cobra.wav */; };
+		1A166FB3261DEF9200A9A1ED /* carcara.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A166FB2261DEF9200A9A1ED /* carcara.wav */; };
+		1A166FB8261DEF9A00A9A1ED /* calango.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A166FB7261DEF9A00A9A1ED /* calango.wav */; };
+		1A166FBD261DFB6100A9A1ED /* shot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A166FBC261DFB6000A9A1ED /* shot.wav */; };
 		1A28D4B4260392880099C03C /* AnimateCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B3260392880099C03C /* AnimateCharacter.swift */; };
 		1A28D4B9260396160099C03C /* AnimationCharacterComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */; };
 		1A584D0C260A1B520019DA2E /* SoundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A584D0B260A1B520019DA2E /* SoundComponent.swift */; };
@@ -18,9 +23,7 @@
 		1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3042600F05C000AEEE0 /* CharacterEntity.swift */; };
 		1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */; };
 		1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */; };
-
 		1AD4E99C2614BB47008E1410 /* corruptedFile.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4E99B2614BB47008E1410 /* corruptedFile.wav */; };
-
 		56D4BCBC2600F7A20020B03E /* DrawingControlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4BCBB2600F7A20020B03E /* DrawingControlEntity.swift */; };
 		880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F705C2603738200CD3E74 /* TimeComponent.swift */; };
 		882E91BE25FFAA1200FD4825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E91BD25FFAA1200FD4825 /* AppDelegate.swift */; };
@@ -64,6 +67,11 @@
 
 /* Begin PBXFileReference section */
 		1A0BC7872602279B0046A146 /* HealthComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponentTests.swift; sourceTree = "<group>"; };
+		1A166FA8261DEA4C00A9A1ED /* onca.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = onca.wav; sourceTree = "<group>"; };
+		1A166FAD261DEF8400A9A1ED /* cobra.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cobra.wav; sourceTree = "<group>"; };
+		1A166FB2261DEF9200A9A1ED /* carcara.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = carcara.wav; sourceTree = "<group>"; };
+		1A166FB7261DEF9A00A9A1ED /* calango.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = calango.wav; sourceTree = "<group>"; };
+		1A166FBC261DFB6000A9A1ED /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
 		1A28D4B3260392880099C03C /* AnimateCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCharacter.swift; sourceTree = "<group>"; };
 		1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponentTests.swift; sourceTree = "<group>"; };
 		1A584D0B260A1B520019DA2E /* SoundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundComponent.swift; sourceTree = "<group>"; };
@@ -134,6 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				1AD4E99B2614BB47008E1410 /* corruptedFile.wav */,
+				1A166FA8261DEA4C00A9A1ED /* onca.wav */,
+				1A166FAD261DEF8400A9A1ED /* cobra.wav */,
+				1A166FB2261DEF9200A9A1ED /* carcara.wav */,
+				1A166FB7261DEF9A00A9A1ED /* calango.wav */,
+				1A166FBC261DFB6000A9A1ED /* shot.wav */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -256,12 +269,9 @@
 			children = (
 				882E92142600D45E00FD4825 /* ModelsEmpty */,
 				1A28D4B3260392880099C03C /* AnimateCharacter.swift */,
-
 				1A97C9B1260B8666001959ED /* TypeSound.swift */,
 				1A7D031C26121D4F001BF309 /* AudioFile.swift */,
-
 				886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */,
-
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,9 +391,14 @@
 			files = (
 				1AD4E99C2614BB47008E1410 /* corruptedFile.wav in Resources */,
 				882E91F825FFAF6E00FD4825 /* .swiftlint.yml in Resources */,
+				1A166FAE261DEF8400A9A1ED /* cobra.wav in Resources */,
 				882E921D2600D47200FD4825 /* ManagerEmpty in Resources */,
 				882E91CA25FFAA1400FD4825 /* LaunchScreen.storyboard in Resources */,
+				1A166FB3261DEF9200A9A1ED /* carcara.wav in Resources */,
 				882E92152600D45E00FD4825 /* ModelsEmpty in Resources */,
+				1A166FB8261DEF9A00A9A1ED /* calango.wav in Resources */,
+				1A166FA9261DEA4C00A9A1ED /* onca.wav in Resources */,
+				1A166FBD261DFB6100A9A1ED /* shot.wav in Resources */,
 				882E92272600D49800FD4825 /* EntitiesEmpty in Resources */,
 				882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */,
 			);

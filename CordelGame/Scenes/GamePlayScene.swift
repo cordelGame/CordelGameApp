@@ -10,19 +10,25 @@ import AVFoundation
 // swiftlint:disable line_length
 
 class GamePlayScene: SKScene {
+
+
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
-    let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1)
+    let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1, sound: .nullURL)
     
     lazy var enemy: CharacterEntity = {
         let configEnemy = self.enemyLevel.getEnemy()
-        var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health)
+        var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health, sound: configEnemy.sound)
 
         guard let enemySprite = characterEntity.component(ofType: VisualComponent.self) else {fatalError()}
+        guard let enemySound = characterEntity.component(ofType: SoundComponent.self) else {fatalError()}
 
         enemySprite.node.anchorPoint = CGPoint(x: 1, y: 0)
         enemySprite.node.size.width = self.frame.width * configEnemy.widthMultiplier
         enemySprite.node.size.height = self.frame.height * configEnemy.heightMultiplier
+
+        enemySound.configureSound(soundStyle: configEnemy.sound)
+        enemySound.playSound()
 
         return characterEntity
     }()
@@ -37,12 +43,20 @@ class GamePlayScene: SKScene {
         return cangaceira.component(ofType: HealthComponent.self)!
     }
 
+    var cangaceiraSoundComponent: SoundComponent {
+        return cangaceira.component(ofType: SoundComponent.self)!
+    }
+
     var enemyVisualComponent: VisualComponent {
         return enemy.component(ofType: VisualComponent.self)!
     }
 
     var enemyHelthComponent: HealthComponent {
         return enemy.component(ofType: HealthComponent.self)!
+    }
+
+    var enemySoundComponent: SoundComponent {
+        return enemy.component(ofType: SoundComponent.self)!
     }
 
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
@@ -69,8 +83,11 @@ class GamePlayScene: SKScene {
         self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
         self.enemyVisualComponent.node.size.width = self.frame.width * configEnemy.widthMultiplier
         self.enemyVisualComponent.node.size.height = self.frame.height * configEnemy.heightMultiplier
-        
+
         self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
+
+        self.enemySoundComponent.configureSound(soundStyle: configEnemy.sound)
+        self.enemySoundComponent.playSound()
     }
 
     override func didMove(to view: SKView) {
@@ -79,6 +96,8 @@ class GamePlayScene: SKScene {
         self.backgroundColor = UIColor(named: "backgroundColor")!
     
         guard let landScapeSprite = landScape.component(ofType: VisualComponent.self) else {fatalError()}
+        guard let landScapeSound = landScape.component(ofType: SoundComponent.self ) else {fatalError()}
+
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
 
         guard let blackBarSprite = blackBar.component(ofType: VisualComponent.self) else {fatalError()}
@@ -111,7 +130,9 @@ class GamePlayScene: SKScene {
         landScapeSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
         landScapeSprite.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
         landScapeSprite.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
-        
+        landScapeSound.configureSound(soundStyle: .nullURL)
+        landScapeSound.playSound()
+
         cangaceiraSprite.node.anchorPoint = CGPoint(x: 0, y: 0)
         cangaceiraSprite.node.position = CGPoint(x: landScapeSprite.node.frame.minX + 30, y: landScapeSprite.node.frame.minY + 5)
         cangaceiraSprite.node.size.width = self.frame.width * 0.3691
@@ -250,6 +271,8 @@ class GamePlayScene: SKScene {
         if self.checkVictory() {
             blackBarAction.stop(width: self.frame.width)
             enemyHelthComponent.hit()
+            cangaceiraSoundComponent.configureSound(soundStyle: .shot)
+            cangaceiraSoundComponent.playSound()
 
             if enemyHelthComponent.notAlive() {
                 self.nextEnemy()
