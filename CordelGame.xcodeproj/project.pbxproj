@@ -32,6 +32,7 @@
 		882E92432602247300FD4825 /* TimeBarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E92422602247300FD4825 /* TimeBarEntity.swift */; };
 		886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */; };
 		88AD4785261B3C290042D778 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD4784261B3C290042D778 /* GameManager.swift */; };
+		A2873FB9261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */; };
 		A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E0B9F260B82E20031DF35 /* CordelEntity.swift */; };
 		A2AA84602600E12600D24369 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA845F2600E12600D24369 /* GameViewController.swift */; };
 		A2AA84652600E16700D24369 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84642600E16700D24369 /* GameController.swift */; };
@@ -91,6 +92,7 @@
 		882E92422602247300FD4825 /* TimeBarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBarEntity.swift; sourceTree = "<group>"; };
 		886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemiesLevel1.swift; sourceTree = "<group>"; };
 		88AD4784261B3C290042D778 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		A28E0B9F260B82E20031DF35 /* CordelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelEntity.swift; sourceTree = "<group>"; };
 		A2AA845F2600E12600D24369 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A2AA84642600E16700D24369 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		882E91BC25FFAA1200FD4825 /* CordelGame */ = {
 			isa = PBXGroup;
 			children = (
+				A2873FB7261F26FD00AE83BE /* Fonts */,
 				882E92132600D3E100FD4825 /* Controllers */,
 				882E92122600D3D300FD4825 /* Models */,
 				882E92112600D3AD00FD4825 /* Managers */,
@@ -259,6 +262,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		A2873FB7261F26FD00AE83BE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +377,7 @@
 				882E91F825FFAF6E00FD4825 /* .swiftlint.yml in Resources */,
 				882E921D2600D47200FD4825 /* ManagerEmpty in Resources */,
 				882E91CA25FFAA1400FD4825 /* LaunchScreen.storyboard in Resources */,
+				A2873FB9261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf in Resources */,
 				882E92152600D45E00FD4825 /* ModelsEmpty in Resources */,
 				882E92272600D49800FD4825 /* EntitiesEmpty in Resources */,
 				882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */,
