@@ -84,7 +84,12 @@ class GamePlayScene: SKScene {
         enemyVisualComponent.node.position = CGPoint(x: landScapeVisualComponent.node.frame.maxX + configEnemy.positionX,
                                                      y: landScapeVisualComponent.node.frame.minY + configEnemy.positionY)
     }
-
+    
+    var overlay = SKSpriteNode(imageNamed: "Overlay")
+    var pauseButton = SKSpriteNode(imageNamed: "homeButton")
+    
+    var pauseNode: PauseNode!
+    
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
         super.didMove(to: view)
@@ -164,11 +169,22 @@ class GamePlayScene: SKScene {
         
         self.cordelVisualComponent.node.anchorPoint = CGPoint(x: 0.5, y: 1)
         self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 35)
-
+        
+        pauseButton.position = CGPoint(x: self.frame.maxX - 45, y: self.frame.minY + 40)
+        pauseButton.name = "pauseButton"
+        
+        overlay.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        overlay.size = CGSize(width: self.frame.width, height: self.frame.height)
+        overlay.alpha = 0.5
+        
         shape.strokeColor = .black
         shape.lineWidth = 8
-        addChild(shape)
         shape.name = "shape"
+        
+        addChild(shape)
+        addChild(pauseButton)
+        addChild(overlay)
+        overlay.isHidden = true
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -196,6 +212,15 @@ class GamePlayScene: SKScene {
                 self.testerVictory.append("button4")
                 self.tapped()
             }
+            enumerateChildNodes(withName: "//*", using: { (node, stop) in
+                if node.name == "pauseButton" {
+                    if node.contains(position) {
+                        self.overlay.isHidden = false
+                        self.setupPause()
+                    }
+                }
+            })
+            
         }
         
     }
@@ -312,5 +337,10 @@ class GamePlayScene: SKScene {
     func tapped() {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
+    }
+    
+    func setupPause() {
+        pauseNode = PauseNode(gameScene: self)
+        addChild(pauseNode)
     }
 }

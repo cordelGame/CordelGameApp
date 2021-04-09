@@ -32,6 +32,7 @@
 		882E92432602247300FD4825 /* TimeBarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E92422602247300FD4825 /* TimeBarEntity.swift */; };
 		886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */; };
 		88AD4785261B3C290042D778 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD4784261B3C290042D778 /* GameManager.swift */; };
+		88AD4793262081B00042D778 /* PauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD4792262081B00042D778 /* PauseNode.swift */; };
 		A2873FB9261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */; };
 		A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E0B9F260B82E20031DF35 /* CordelEntity.swift */; };
 		A2AA84602600E12600D24369 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA845F2600E12600D24369 /* GameViewController.swift */; };
@@ -92,6 +93,7 @@
 		882E92422602247300FD4825 /* TimeBarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBarEntity.swift; sourceTree = "<group>"; };
 		886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemiesLevel1.swift; sourceTree = "<group>"; };
 		88AD4784261B3C290042D778 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		88AD4792262081B00042D778 /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
 		A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		A28E0B9F260B82E20031DF35 /* CordelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelEntity.swift; sourceTree = "<group>"; };
 		A2AA845F2600E12600D24369 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				882E920D2600D34D00FD4825 /* Scenes */,
 				882E91C625FFAA1400FD4825 /* Assets.xcassets */,
 				882E91CB25FFAA1400FD4825 /* Info.plist */,
+				88AD4792262081B00042D778 /* PauseNode.swift */,
 			);
 			path = CordelGame;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				566392BC260E2D460054B59C /* CordeisData.swift in Sources */,
 				886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */,
 				880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */,
+				88AD4793262081B00042D778 /* PauseNode.swift in Sources */,
 				A2AA84602600E12600D24369 /* GameViewController.swift in Sources */,
 				A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */,
 				1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */,
