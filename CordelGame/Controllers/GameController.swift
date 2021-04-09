@@ -11,6 +11,7 @@ import SpriteKit
 class GameController {
     func handleScene() -> SKScene {
         return GamePlayScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+//        return MenuScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
     }
 }
 
