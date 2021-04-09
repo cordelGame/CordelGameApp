@@ -85,8 +85,10 @@ class GamePlayScene: SKScene {
                                                      y: landScapeVisualComponent.node.frame.minY + configEnemy.positionY)
     }
     
+    lazy var blackBarAction = self.blackBar.component(ofType: TimeComponent.self)!
+    
     var overlay = SKSpriteNode(imageNamed: "Overlay")
-    var pauseButton = SKSpriteNode(imageNamed: "homeButton")
+    var pauseButton = ButtonNode(spriteName: "pauseButton")
     
     var pauseNode: PauseNode!
     
@@ -171,11 +173,11 @@ class GamePlayScene: SKScene {
         self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 35)
         
         pauseButton.position = CGPoint(x: self.frame.maxX - 45, y: self.frame.minY + 40)
-        pauseButton.name = "pauseButton"
+        pauseButton.wasTapped = wasTapped
         
         overlay.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         overlay.size = CGSize(width: self.frame.width, height: self.frame.height)
-        overlay.alpha = 0.5
+        overlay.alpha = 0.7
         
         shape.strokeColor = .black
         shape.lineWidth = 8
@@ -212,15 +214,6 @@ class GamePlayScene: SKScene {
                 self.testerVictory.append("button4")
                 self.tapped()
             }
-            enumerateChildNodes(withName: "//*", using: { (node, stop) in
-                if node.name == "pauseButton" {
-                    if node.contains(position) {
-                        self.overlay.isHidden = false
-                        self.setupPause()
-                    }
-                }
-            })
-            
         }
         
     }
@@ -284,8 +277,6 @@ class GamePlayScene: SKScene {
             shape.path = nil
             shape.removeAllChildren()
         }
-    
-        guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
         
         if checkVictory {
             blackBarAction.stop(width: self.frame.width)
@@ -342,5 +333,14 @@ class GamePlayScene: SKScene {
     func setupPause() {
         pauseNode = PauseNode(gameScene: self)
         addChild(pauseNode)
+    }
+}
+
+extension GamePlayScene {
+    func wasTapped() {
+        self.overlay.isHidden = false
+        self.setupPause()
+        guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
+        blackBarAction.node.removeAllActions()
     }
 }
