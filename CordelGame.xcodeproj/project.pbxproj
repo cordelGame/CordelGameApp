@@ -43,6 +43,7 @@
 		A2AA84942600F25400D24369 /* LandscapeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84932600F25400D24369 /* LandscapeEntity.swift */; };
 		A2AA84992600F42700D24369 /* LandscapeEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */; };
 		A2C5FD5D2620E39900DF4CB3 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5FD5C2620E39900DF4CB3 /* ButtonNode.swift */; };
+		A2C5FD7F2620F3DB00DF4CB3 /* StarsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5FD7E2620F3DB00DF4CB3 /* StarsNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		A2AA84932600F25400D24369 /* LandscapeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeEntity.swift; sourceTree = "<group>"; };
 		A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeEntityTests.swift; sourceTree = "<group>"; };
 		A2C5FD5C2620E39900DF4CB3 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		A2C5FD7E2620F3DB00DF4CB3 /* StarsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C5FD5C2620E39900DF4CB3 /* ButtonNode.swift */,
+				A2C5FD7E2620F3DB00DF4CB3 /* StarsNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */,
 				880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */,
 				A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */,
+				A2C5FD7F2620F3DB00DF4CB3 /* StarsNode.swift in Sources */,
 				A2AA84602600E12600D24369 /* GameViewController.swift in Sources */,
 				A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */,
 				1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */,

@@ -39,6 +39,11 @@ class MenuScene: SKScene {
 
         return label
     }()
+    
+    let stars: StarsNode = {
+        let stars = StarsNode(classification: 2)
+        return stars
+    }()
 
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(named: "backgroundColor")!
@@ -47,6 +52,7 @@ class MenuScene: SKScene {
         self.configureButtons()
         self.configureLevelNameLabel()
         self.configureStartGamebutton()
+        self.configureStars()
     }
 }
 
@@ -79,5 +85,20 @@ extension MenuScene {
 
         let positionY = self.levelName.frame.minY - 10 - self.startGameButton.buttonSprite.frame.height/2
         self.startGameButton.position = CGPoint(x: self.previewLevel.frame.midX, y: positionY)
+    }
+    
+    private func configureStars() {
+        self.addChild(self.stars)
+        
+        let paddingHorizontal = self.previewLevel.frame.width/4
+        let paddingVertical = self.stars.firstStar.frame.height/2 + 8
+        self.stars.firstStar.position = CGPoint(x: self.frame.midX-paddingHorizontal,
+                                                y: self.previewLevel.frame.maxY+paddingVertical)
+
+        self.stars.secondStar.position = CGPoint(x: self.frame.midX,
+                                                 y: self.previewLevel.frame.maxY+paddingVertical+24)
+
+        self.stars.thirdStar.position = CGPoint(x: self.frame.midX+paddingHorizontal,
+                                                y: self.previewLevel.frame.maxY+paddingVertical)
     }
 }
