@@ -37,4 +37,15 @@ class SoundComponent: GKComponent {
   func pauseSound() {
     sound.pause()
   }
+
+  func changeVolume(volume: Float) {
+    sound.volume = volume
+  }
+
+  func temporaryVolume(volume: Float, duration: TimeInterval) {
+    changeVolume(volume: volume)
+    DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+        self.changeVolume(volume: 1.0)
+    }
+  }
 }

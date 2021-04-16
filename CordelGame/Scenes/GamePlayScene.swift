@@ -12,7 +12,7 @@ import AVFoundation
 class GamePlayScene: SKScene {
 
 
-    
+
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1, sound: .nullURL)
     
@@ -28,6 +28,7 @@ class GamePlayScene: SKScene {
         enemySprite.node.size.height = self.frame.height * configEnemy.heightMultiplier
 
         enemySound.configureSound(soundStyle: configEnemy.sound)
+        enemySound.changeVolume(volume: 1.0)
         enemySound.playSound()
 
         return characterEntity
@@ -59,6 +60,10 @@ class GamePlayScene: SKScene {
         return enemy.component(ofType: SoundComponent.self)!
     }
 
+    var landscapeSoundComponent: SoundComponent {
+        return landScape.component(ofType: SoundComponent.self)!
+    }
+
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
     let rectangle: TimeBarEntity = TimeBarEntity("rectangle")
     let drawingControl: DrawingControlEntity = DrawingControlEntity()
@@ -86,6 +91,8 @@ class GamePlayScene: SKScene {
 
         self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
 
+        self.landscapeSoundComponent.temporaryVolume(volume: 0.25, duration: 2.0)
+
         self.enemySoundComponent.configureSound(soundStyle: configEnemy.sound)
         self.enemySoundComponent.playSound()
     }
@@ -96,7 +103,6 @@ class GamePlayScene: SKScene {
         self.backgroundColor = UIColor(named: "backgroundColor")!
     
         guard let landScapeSprite = landScape.component(ofType: VisualComponent.self) else {fatalError()}
-        guard let landScapeSound = landScape.component(ofType: SoundComponent.self ) else {fatalError()}
 
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
 
@@ -130,8 +136,9 @@ class GamePlayScene: SKScene {
         landScapeSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
         landScapeSprite.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
         landScapeSprite.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
-        landScapeSound.configureSound(soundStyle: .nullURL)
-        landScapeSound.playSound()
+        landscapeSoundComponent.configureSound(soundStyle: .background)
+        landscapeSoundComponent.playSound()
+        landscapeSoundComponent.temporaryVolume(volume: 0.25, duration: 3.0)
 
         cangaceiraSprite.node.anchorPoint = CGPoint(x: 0, y: 0)
         cangaceiraSprite.node.position = CGPoint(x: landScapeSprite.node.frame.minX + 30, y: landScapeSprite.node.frame.minY + 5)
