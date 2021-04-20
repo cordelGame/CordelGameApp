@@ -14,10 +14,12 @@ class GamePlayScene: SKScene {
 
 
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
+
+    let backgroundEmpty: LandscapeEntity = LandscapeEntity(assetName: "backgroungEmpty")
+
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1, sound: .nullURL)
-    
     lazy var enemy: CharacterEntity = {
-        let configEnemy = self.enemyLevel.getEnemy()
+        let configEnemy = self.gameManager.getEnemy()
         var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health, sound: configEnemy.sound)
 
         guard let enemySprite = characterEntity.component(ofType: VisualComponent.self) else {fatalError()}
@@ -34,7 +36,15 @@ class GamePlayScene: SKScene {
         return characterEntity
     }()
     
-    let cordelEntity = CordelEntity(assetName: "Cordel")
+    lazy var cordelEntity: CordelEntity = {
+        let cordel = self.gameManager.getCordel()
+        let cordelEntity = CordelEntity(assetName: cordel.name)
+        return cordelEntity
+    }()
+
+    var landScapeVisualComponent: VisualComponent {
+        return landScape.component(ofType: VisualComponent.self)!
+    }
 
     var cordelVisualComponent: VisualComponent {
         return cordelEntity.component(ofType: VisualComponent.self)!
@@ -70,7 +80,6 @@ class GamePlayScene: SKScene {
     
     let victoyCondition = ["button1", "button2", "button3", "button4"]
     var testerVictory: [String] = []
-    var enemyLevel: EnemiesLevel1 = .calango
     
     var button1 = SKSpriteNode()
     var button2 = SKSpriteNode()
@@ -80,14 +89,18 @@ class GamePlayScene: SKScene {
     var initialPoint = CGPoint()
     var finalPoint = CGPoint()
     var shape = SKShapeNode()
+    
+    var gameManager: GameManager = GameManager(enemyLevel: EnemiesLevel1.calango)
 
     func nextEnemy() {
-        let configEnemy = self.enemyLevel.getEnemy()
+        let configEnemy = self.gameManager.getEnemy()
         
         self.enemyVisualComponent.changeAsset(assetName: configEnemy.name)
         self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
         self.enemyVisualComponent.node.size.width = self.frame.width * configEnemy.widthMultiplier
         self.enemyVisualComponent.node.size.height = self.frame.height * configEnemy.heightMultiplier
+        enemyVisualComponent.node.position = CGPoint(x: landScapeVisualComponent.node.frame.maxX + configEnemy.positionX,
+                                                     y: landScapeVisualComponent.node.frame.minY + configEnemy.positionY)
 
         self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
 
@@ -100,16 +113,15 @@ class GamePlayScene: SKScene {
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
         super.didMove(to: view)
-        self.backgroundColor = UIColor(named: "backgroundColor")!
-    
-        guard let landScapeSprite = landScape.component(ofType: VisualComponent.self) else {fatalError()}
+        guard let backgroundEmptySprite = backgroundEmpty.component(ofType: VisualComponent.self) else {fatalError()}
 
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
 
         guard let blackBarSprite = blackBar.component(ofType: VisualComponent.self) else {fatalError()}
         guard let rectangleSprite = rectangle.component(ofType: VisualComponent.self) else {fatalError()}
         
-        self.addChild(landScapeSprite.node)
+        self.addChild(backgroundEmptySprite.node)
+        self.addChild(landScapeVisualComponent.node)
         self.addChild(enemyVisualComponent.node)
         self.addChild(cangaceiraSprite.node)
 
@@ -133,22 +145,27 @@ class GamePlayScene: SKScene {
         button3 = drawingControl.button3VisualComponent.node
         button4 = drawingControl.button4VisualComponent.node
         
-        landScapeSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
-        landScapeSprite.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
-        landScapeSprite.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
+
         landscapeSoundComponent.configureSound(soundStyle: .background)
         landscapeSoundComponent.playSound()
         landscapeSoundComponent.temporaryVolume(volume: 0.25, duration: 3.0)
 
+        backgroundEmptySprite.node.anchorPoint = CGPoint(x: 0.5, y: 0)
+        backgroundEmptySprite.node.position = CGPoint(x: self.frame.midX, y: self.frame.minY)
+
+        landScapeVisualComponent.node.anchorPoint = CGPoint(x: 0, y: 1)
+        landScapeVisualComponent.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
+        landScapeVisualComponent.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
+
         cangaceiraSprite.node.anchorPoint = CGPoint(x: 0, y: 0)
-        cangaceiraSprite.node.position = CGPoint(x: landScapeSprite.node.frame.minX + 30, y: landScapeSprite.node.frame.minY + 5)
+        cangaceiraSprite.node.position = CGPoint(x: landScapeVisualComponent.node.frame.minX + 30, y: landScapeVisualComponent.node.frame.minY + 5)
         cangaceiraSprite.node.size.width = self.frame.width * 0.3691
         cangaceiraSprite.node.size.height = self.frame.height * 0.3196
         
-        enemyVisualComponent.node.position = CGPoint(x: landScapeSprite.node.frame.maxX - 5, y: landScapeSprite.node.frame.minY + 5)
+        enemyVisualComponent.node.position = CGPoint(x: landScapeVisualComponent.node.frame.maxX - 5, y: landScapeVisualComponent.node.frame.minY + 5)
         
         rectangleSprite.node.anchorPoint = CGPoint(x: 0, y: 1)
-        rectangleSprite.node.position = CGPoint(x: self.frame.minX, y: landScapeSprite.node.frame.minY)
+        rectangleSprite.node.position = CGPoint(x: self.frame.minX, y: landScapeVisualComponent.node.frame.minY)
         rectangleSprite.node.size.width = self.frame.width
         
         blackBarSprite.node.anchorPoint = CGPoint(x: 0, y: 0.5)
@@ -156,9 +173,8 @@ class GamePlayScene: SKScene {
         blackBarSprite.node.size.width = self.frame.width
         
         drawingControl.controlVisualComponent.node.anchorPoint = CGPoint(x: 0.5, y: 1)
-        drawingControl.controlVisualComponent.node.position = CGPoint(x: rectangleSprite.node.frame.midX, y: landScapeSprite.node.frame.minY-5)
+        drawingControl.controlVisualComponent.node.position = CGPoint(x: rectangleSprite.node.frame.midX, y: landScapeVisualComponent.node.frame.minY-5)
         drawingControl.controlVisualComponent.node.size.width = self.frame.width
-        drawingControl.controlVisualComponent.node.size.height = drawingControl.controlVisualComponent.node.size.width
                 
         let positionXButtonOne = drawingControl.controlVisualComponent.node.frame.midX - (drawingControl.controlVisualComponent.node.size.width/4) - drawingControl.button1VisualComponent.node.frame.width/4
         drawingControl.button1VisualComponent.node.position = CGPoint(x: positionXButtonOne, y: drawingControl.controlVisualComponent.node.frame.midY)
@@ -177,7 +193,7 @@ class GamePlayScene: SKScene {
         drawingControl.button4VisualComponent.node.name = "button4"
         
         self.cordelVisualComponent.node.anchorPoint = CGPoint(x: 0.5, y: 1)
-        self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 50)
+        self.cordelVisualComponent.node.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 35)
 
         shape.strokeColor = .black
         shape.lineWidth = 8
@@ -268,14 +284,16 @@ class GamePlayScene: SKScene {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let checkVictory = gameManager.checkWinCondition(userInput: self.testerVictory)
+        
         if checkPosition() {
             shape.path = nil
             shape.removeAllChildren()
         }
     
         guard let blackBarAction = blackBar.component(ofType: TimeComponent.self) else { return }
-    
-        if self.checkVictory() {
+        
+        if checkVictory {
             blackBarAction.stop(width: self.frame.width)
             enemyHelthComponent.hit()
             cangaceiraSoundComponent.configureSound(soundStyle: .shot)
@@ -284,8 +302,13 @@ class GamePlayScene: SKScene {
             if enemyHelthComponent.notAlive() {
                 self.nextEnemy()
             }
+            
+            let cordel = self.gameManager.getCordel()
+            cordelVisualComponent.changeAsset(assetName: cordel.name)
+            
             blackBarAction.timeResize(timeDificult: 5)
         }
+        self.testerVictory = []
     }
     
     func checkPosition() -> Bool {
@@ -312,15 +335,6 @@ class GamePlayScene: SKScene {
         shape.addChild(line)
         line.name = "line"
         
-    }
-    
-    func checkVictory() -> Bool {
-        if victoyCondition == testerVictory || victoyCondition.reversed() == testerVictory { // To do: deixar generico
-            testerVictory = []
-            return true
-        }
-        testerVictory = []
-        return false
     }
     
     func gameOver() {
