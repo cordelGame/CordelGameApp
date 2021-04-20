@@ -33,6 +33,19 @@ class HealthComponentTests: XCTestCase {
     XCTAssertEqual(sut.health, 0)
   }
 
+  func test_setHealth_newHealth() {
+    let oldHealth = sut.health
+    print(oldHealth)
+    sut.setHelth(newHealth: 6)
+    XCTAssertNotEqual(oldHealth, sut.health)
+  }
+
+  func test_initWithCoder_returnNil() {
+    sut = HealthComponent(coder: NSCoder())
+
+    XCTAssertNil(sut)
+  }
+
   override func tearDown() {
     sut = nil
   }
