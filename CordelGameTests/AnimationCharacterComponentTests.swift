@@ -30,6 +30,12 @@ class AnimationCharacterComponentTests: XCTestCase {
     XCTAssertNoThrow(sut.animateCharacter(typeAnimation: .death))
   }
 
+  func test_initWithCoder_returnNil() {
+    sut = AnimationCharacterComponent(coder: NSCoder())
+
+    XCTAssertNil(sut)
+  }
+
   override func tearDown() {
     sut = nil
   }
