@@ -32,6 +32,8 @@
 		882E92432602247300FD4825 /* TimeBarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E92422602247300FD4825 /* TimeBarEntity.swift */; };
 		886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */; };
 		88AD4785261B3C290042D778 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD4784261B3C290042D778 /* GameManager.swift */; };
+		A224E0B6262F10300041187F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224E0B5262F10300041187F /* Navigation.swift */; };
+		A224E0BE262F10E60041187F /* ScenesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224E0BD262F10E60041187F /* ScenesEnum.swift */; };
 		A2873FB9261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */; };
 		A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2873FBD261F35E800AE83BE /* MenuScene.swift */; };
 		A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E0B9F260B82E20031DF35 /* CordelEntity.swift */; };
@@ -95,6 +97,8 @@
 		882E92422602247300FD4825 /* TimeBarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBarEntity.swift; sourceTree = "<group>"; };
 		886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemiesLevel1.swift; sourceTree = "<group>"; };
 		88AD4784261B3C290042D778 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		A224E0B5262F10300041187F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		A224E0BD262F10E60041187F /* ScenesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesEnum.swift; sourceTree = "<group>"; };
 		A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		A2873FBD261F35E800AE83BE /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		A28E0B9F260B82E20031DF35 /* CordelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelEntity.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		882E91BC25FFAA1200FD4825 /* CordelGame */ = {
 			isa = PBXGroup;
 			children = (
+				A224E0B4262F10170041187F /* Protocols */,
 				A2C5FD5B2620E38200DF4CB3 /* Nodes */,
 				A2873FB7261F26FD00AE83BE /* Fonts */,
 				882E92132600D3E100FD4825 /* Controllers */,
@@ -257,6 +262,7 @@
 				886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */,
 				566392B6260E10E90054B59C /* CordeisLevel.swift */,
 				566392BB260E2D460054B59C /* CordeisData.swift */,
+				A224E0BD262F10E60041187F /* ScenesEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +274,14 @@
 				A2AA84642600E16700D24369 /* GameController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A224E0B4262F10170041187F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A224E0B5262F10300041187F /* Navigation.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A2873FB7261F26FD00AE83BE /* Fonts */ = {
@@ -445,6 +459,7 @@
 				566392BC260E2D460054B59C /* CordeisData.swift in Sources */,
 				886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */,
 				880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */,
+				A224E0B6262F10300041187F /* Navigation.swift in Sources */,
 				A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */,
 				A2C5FD7F2620F3DB00DF4CB3 /* StarsNode.swift in Sources */,
 				A2AA84602600E12600D24369 /* GameViewController.swift in Sources */,
@@ -453,6 +468,7 @@
 				1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */,
 				566392B7260E10E90054B59C /* CordeisLevel.swift in Sources */,
 				A2AA84652600E16700D24369 /* GameController.swift in Sources */,
+				A224E0BE262F10E60041187F /* ScenesEnum.swift in Sources */,
 				88AD4785261B3C290042D778 /* GameManager.swift in Sources */,
 				1ACFE3052600F05C000AEEE0 /* CharacterEntity.swift in Sources */,
 				A2AA846A2600E1FD00D24369 /* GamePlayScene.swift in Sources */,

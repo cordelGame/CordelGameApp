@@ -9,6 +9,8 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    weak var navigationDelegate: Navigation?
+
     let previewLevel: SKSpriteNode = {
         let sprite = SKSpriteNode(imageNamed: "Capa01")
         return sprite
@@ -28,6 +30,11 @@ class MenuScene: SKScene {
         let sprite = ButtonNode(spriteName: "StartGame")
         return sprite
     }()
+    
+    let soundButton: ButtonNode = {
+        let sprite = ButtonNode(spriteName: "soundButton")
+        return sprite
+    }()
 
     let levelName: SKLabelNode = {
         let label = SKLabelNode()
@@ -45,6 +52,28 @@ class MenuScene: SKScene {
         return stars
     }()
 
+    let firstTitleName: SKLabelNode = {
+        let label = SKLabelNode()
+
+        label.attributedText = NSMutableAttributedString(string: "Cordel", attributes: [
+            NSAttributedString.Key.strokeWidth: -1,
+            NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 50)!
+        ])
+
+        return label
+    }()
+
+    let secondTitleName: SKLabelNode = {
+        let label = SKLabelNode()
+
+        label.attributedText = NSMutableAttributedString(string: "Encantado", attributes: [
+            NSAttributedString.Key.strokeWidth: -1,
+            NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 50)!
+        ])
+
+        return label
+    }()
+
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(named: "backgroundColor")!
 
@@ -53,6 +82,8 @@ class MenuScene: SKScene {
         self.configureLevelNameLabel()
         self.configureStartGamebutton()
         self.configureStars()
+        self.configureGameName()
+        self.configureSoundButton()
     }
 }
 
@@ -85,8 +116,19 @@ extension MenuScene {
 
         let positionY = self.levelName.frame.minY - 10 - self.startGameButton.buttonSprite.frame.height/2
         self.startGameButton.position = CGPoint(x: self.previewLevel.frame.midX, y: positionY)
+        
+        self.startGameButton.wasTapped = {
+            self.navigationDelegate?.navigate(to: .game)
+        }
     }
-    
+
+    private func configureSoundButton() {
+        self.addChild(self.soundButton)
+
+        let halfSizeButton = self.soundButton.buttonSprite.size.height/2
+        self.soundButton.position = CGPoint(x: self.frame.maxX - halfSizeButton, y: self.firstTitleName.frame.maxY + halfSizeButton)
+    }
+
     private func configureStars() {
         self.addChild(self.stars)
         
@@ -100,5 +142,13 @@ extension MenuScene {
 
         self.stars.thirdStar.position = CGPoint(x: self.frame.midX+paddingHorizontal,
                                                 y: self.previewLevel.frame.maxY+paddingVertical)
+    }
+    
+    private func configureGameName() {
+        self.addChild(firstTitleName)
+        self.addChild(secondTitleName)
+        
+        self.firstTitleName.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 150)
+        self.secondTitleName.position = CGPoint(x: self.frame.midX, y: self.firstTitleName.frame.midY - 70)
     }
 }

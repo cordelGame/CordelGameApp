@@ -10,7 +10,7 @@ import SpriteKit
 class ButtonNode: SKNode {
     
     var buttonSprite: SKSpriteNode
-    weak var delegate: ActionDelegate?
+    var wasTapped: (() -> Void)?
 
     init(spriteName: String) {
         self.buttonSprite = SKSpriteNode(imageNamed: spriteName)
@@ -32,7 +32,7 @@ class ButtonNode: SKNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.buttonSprite.setScale(1.0)
-        self.delegate?.wasTapped()
+        self.wasTapped?()
     }
 }
 
