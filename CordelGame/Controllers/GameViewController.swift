@@ -9,8 +9,19 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-
-    let gameController: GameController = GameController()
+    
+    let skView = SKView()
+    lazy var gameController: GameController = {
+        let gameController = GameController()
+    
+        gameController.handleUpdate = {
+            let scene = self.gameController.handleScene()
+            scene.scaleMode = .aspectFill
+            self.skView.presentScene(scene)
+        }
+        
+        return gameController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +31,6 @@ class GameViewController: UIViewController {
 
     private func setup() {
         let scene = self.gameController.handleScene()
-        let skView = SKView()
-
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
         self.view = skView
