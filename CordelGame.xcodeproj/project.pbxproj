@@ -35,6 +35,7 @@
 		88AD4793262081B00042D778 /* PauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD4792262081B00042D778 /* PauseNode.swift */; };
 		A224E0B6262F10300041187F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224E0B5262F10300041187F /* Navigation.swift */; };
 		A224E0BE262F10E60041187F /* ScenesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224E0BD262F10E60041187F /* ScenesEnum.swift */; };
+		A24B9B59262F58AA001D32A7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B9B58262F58AA001D32A7 /* Router.swift */; };
 		A2873FB9261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */; };
 		A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2873FBD261F35E800AE83BE /* MenuScene.swift */; };
 		A28E0BA0260B82E20031DF35 /* CordelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E0B9F260B82E20031DF35 /* CordelEntity.swift */; };
@@ -101,6 +102,7 @@
 		88AD4792262081B00042D778 /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
 		A224E0B5262F10300041187F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		A224E0BD262F10E60041187F /* ScenesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesEnum.swift; sourceTree = "<group>"; };
+		A24B9B58262F58AA001D32A7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		A2873FBD261F35E800AE83BE /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		A28E0B9F260B82E20031DF35 /* CordelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelEntity.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				882E921C2600D47200FD4825 /* ManagerEmpty */,
 				88AD4784261B3C290042D778 /* GameManager.swift */,
+				A24B9B58262F58AA001D32A7 /* Router.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				886D9ECB260A2F74006E3870 /* EnemiesLevel1.swift in Sources */,
 				880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */,
 				A224E0B6262F10300041187F /* Navigation.swift in Sources */,
+				A24B9B59262F58AA001D32A7 /* Router.swift in Sources */,
 				A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */,
 				A2C5FD7F2620F3DB00DF4CB3 /* StarsNode.swift in Sources */,
 				88AD4793262081B00042D778 /* PauseNode.swift in Sources */,

@@ -48,7 +48,8 @@ class MenuScene: SKScene {
     }()
     
     let stars: StarsNode = {
-        let stars = StarsNode(classification: 2)
+        let points = UserDefaults.standard.integer(forKey: "points")
+        let stars = StarsNode(classification: points)
         return stars
     }()
 
@@ -126,7 +127,9 @@ extension MenuScene {
         self.addChild(self.soundButton)
 
         let halfSizeButton = self.soundButton.buttonSprite.size.height/2
-        self.soundButton.position = CGPoint(x: self.frame.maxX - halfSizeButton, y: self.firstTitleName.frame.maxY + halfSizeButton)
+        self.soundButton.position = CGPoint(x: self.frame.maxX - halfSizeButton,
+                                            y: self.firstTitleName.frame.maxY + halfSizeButton)
+        self.soundButton.setScale(0.8)
     }
 
     private func configureStars() {
