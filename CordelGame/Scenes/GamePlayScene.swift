@@ -10,6 +10,8 @@ import SpriteKit
 
 class GamePlayScene: SKScene {
     
+    weak var navigationDelegate: Navigation?
+    
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
     let backgroundEmpty: LandscapeEntity = LandscapeEntity(assetName: "backgroungEmpty")
 

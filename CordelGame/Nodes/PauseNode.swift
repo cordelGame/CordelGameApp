@@ -18,7 +18,7 @@ class PauseNode: SKNode {
     
     var homeButton = ButtonNode(spriteName: "homeButton")
     
-    var backButton = ButtonNode(spriteName: "backButton")
+    var restartButton = ButtonNode(spriteName: "backButton")
     
     var soundOnButton = ButtonNode(spriteName: "soundButton")
     
@@ -29,6 +29,8 @@ class PauseNode: SKNode {
         super.init()
         setupNodes()
         setupPlayButton()
+        setupHomeButton()
+        setupRestartButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,7 +42,7 @@ class PauseNode: SKNode {
         addChild(playButton)
         addChild(soundOnButton)
         addChild(homeButton)
-        addChild(backButton)
+        addChild(restartButton)
         addChild(soundOffButton)
         
         let paddingVertical = self.backgroud.frame.height/6
@@ -52,15 +54,28 @@ class PauseNode: SKNode {
         soundOffButton.position = CGPoint(x: self.backgroud.frame.midX, y: self.backgroud.frame.minY + paddingVertical + self.soundOffButton.buttonSprite.frame.height/2)
         soundOffButton.isHidden = true
         homeButton.position = CGPoint(x: self.backgroud.frame.midX - paddingHorizontal, y: self.backgroud.frame.minY + (paddingVertical*2) + self.homeButton.buttonSprite.frame.height/2)
-        backButton.position = CGPoint(x: self.backgroud.frame.midX + paddingHorizontal, y: self.backgroud.frame.minY + (paddingVertical*2) + self.backButton.buttonSprite.frame.height/2)
+        restartButton.position = CGPoint(x: self.backgroud.frame.midX + paddingHorizontal, y: self.backgroud.frame.minY + (paddingVertical*2) + self.restartButton.buttonSprite.frame.height/2)
     }
     
-    func setupPlayButton() {
+    private func setupPlayButton() {
+        
         self.playButton.wasTapped = {
             self.gameScene.overlay.isHidden = true
             self.isHidden = true
             let time = (self.gameScene.blackBarAction.node.frame.width * 5)/424.0
             self.gameScene.blackBarAction.timeResize(timeDificult: TimeInterval(time))
+        }
+    }
+    
+    private func setupHomeButton() {
+        self.homeButton.wasTapped = {
+            self.gameScene.navigationDelegate?.navigate(to: .menu)
+        }
+    }
+    
+    private func setupRestartButton() {
+        self.restartButton.wasTapped = {
+            self.gameScene.navigationDelegate?.navigate(to: .game)
         }
     }
 }

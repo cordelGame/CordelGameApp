@@ -98,9 +98,9 @@
 		882E92422602247300FD4825 /* TimeBarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBarEntity.swift; sourceTree = "<group>"; };
 		886D9ECA260A2F74006E3870 /* EnemiesLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemiesLevel1.swift; sourceTree = "<group>"; };
 		88AD4784261B3C290042D778 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		88AD4792262081B00042D778 /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
 		A224E0B5262F10300041187F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		A224E0BD262F10E60041187F /* ScenesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesEnum.swift; sourceTree = "<group>"; };
-		88AD4792262081B00042D778 /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
 		A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		A2873FBD261F35E800AE83BE /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		A28E0B9F260B82E20031DF35 /* CordelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordelEntity.swift; sourceTree = "<group>"; };
@@ -176,7 +176,6 @@
 				882E920D2600D34D00FD4825 /* Scenes */,
 				882E91C625FFAA1400FD4825 /* Assets.xcassets */,
 				882E91CB25FFAA1400FD4825 /* Info.plist */,
-				88AD4792262081B00042D778 /* PauseNode.swift */,
 			);
 			path = CordelGame;
 			sourceTree = "<group>";
@@ -298,6 +297,7 @@
 		A2C5FD5B2620E38200DF4CB3 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				88AD4792262081B00042D778 /* PauseNode.swift */,
 				A2C5FD5C2620E39900DF4CB3 /* ButtonNode.swift */,
 				A2C5FD7E2620F3DB00DF4CB3 /* StarsNode.swift */,
 			);

@@ -23,11 +23,12 @@ class GameController {
 
         switch self.nextScene {
         case .menu:
-            let gameScene = MenuScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
-            gameScene.navigationDelegate = self
-            scene = gameScene
+            let menuScene = MenuScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+            menuScene.navigationDelegate = self
+            scene = menuScene
         case .game:
             let gameScene = GamePlayScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+            gameScene.navigationDelegate = self
             scene = gameScene
         }
         
