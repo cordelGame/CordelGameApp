@@ -10,7 +10,7 @@ import SpriteKit
 class ButtonNode: SKNode {
     
     var buttonSprite: SKSpriteNode
-    var wasTapped: (()->Void)?
+    var wasTapped: (() -> Void)?
 
     init(spriteName: String) {
         self.buttonSprite = SKSpriteNode(imageNamed: spriteName)
