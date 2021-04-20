@@ -29,7 +29,7 @@ enum EnemiesLevel1: EnemyLevel {
             return Enemy(name: "Cobra(1)", widthMultiplier: 0.66, heightMultiplier: 0.18,
                          positionX: -5, positionY: 5, health: 2, cordeis: .medium)
         case .onca:
-            self = .calango
+            self = .onca
             return Enemy(name: "Onca(1)", widthMultiplier: 0.64, heightMultiplier: 0.28,
                          positionX: 100, positionY: 5, health: 4, cordeis: .hard)
         }

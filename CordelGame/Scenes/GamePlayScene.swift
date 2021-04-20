@@ -12,6 +12,16 @@ class GamePlayScene: SKScene {
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
     let backgroundEmpty: LandscapeEntity = LandscapeEntity(assetName: "backgroungEmpty")
+    let overlay = SKSpriteNode(imageNamed: "Overlay")
+    let modalNode = SKSpriteNode(imageNamed: "modal")
+    let homeButton = SKSpriteNode(imageNamed: "homeButton")
+    let reloadButton = SKSpriteNode(imageNamed: "reloadButton")
+    let label = SKLabelNode()
+    var flag = false
+    let stars: StarsNode = {
+        let stars = StarsNode(classification: 2)
+        return stars
+    }()
 
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1)
     lazy var enemy: CharacterEntity = {
@@ -73,7 +83,6 @@ class GamePlayScene: SKScene {
 
     func nextEnemy() {
         let configEnemy = self.gameManager.getEnemy()
-        
         self.enemyVisualComponent.changeAsset(assetName: configEnemy.name)
         self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
         self.enemyVisualComponent.node.size.width = self.frame.width * configEnemy.widthMultiplier
@@ -171,6 +180,22 @@ class GamePlayScene: SKScene {
         shape.name = "shape"
     }
 
+    func setupFinishModal() {
+        overlay.size = CGSize(width: self.frame.width, height: self.frame.height)
+        overlay.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        overlay.alpha = 0.7
+        overlay.zPosition = 10
+        
+        modalNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        modalNode.zPosition = 11
+        
+        homeButton.position = CGPoint(x: self.frame.midX-47, y: self.frame.midY-68)
+        homeButton.zPosition = 11
+        
+        reloadButton.position = CGPoint(x: (self.frame.midX+47), y: (self.frame.midY-68))
+        reloadButton.zPosition = 11
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let touch = touches.first {
@@ -264,16 +289,24 @@ class GamePlayScene: SKScene {
         
         if checkVictory {
             blackBarAction.stop(width: self.frame.width)
+            if enemyHelthComponent.health == 4 {
+                flag = true
+            }
             enemyHelthComponent.hit()
-            
             if enemyHelthComponent.notAlive() {
-                self.nextEnemy()
+                if flag {
+                    setupFinishScreen(win: true)
+                } else {
+                    self.nextEnemy()
+                    blackBarAction.timeResize(timeDificult: 5)
+                }
+                
+            } else {
+                blackBarAction.timeResize(timeDificult: 5)
             }
             
             let cordel = self.gameManager.getCordel()
             cordelVisualComponent.changeAsset(assetName: cordel.name)
-            
-            blackBarAction.timeResize(timeDificult: 5)
         }
         self.testerVictory = []
     }
@@ -306,7 +339,48 @@ class GamePlayScene: SKScene {
     
     func gameOver() {
         cangaceiraHelthComponent.hit()
-        // tela de gameOver
+        setupFinishScreen(win: false)
+    }
+    
+    func setupFinishScreen(win: Bool) {
+        setupFinishModal()
+        addChild(self.overlay)
+        addChild(self.modalNode)
+        addChild(self.homeButton)
+        addChild(self.reloadButton)
+        if win {
+            label.attributedText = NSMutableAttributedString(string: "Você Ganhou", attributes: [
+                NSAttributedString.Key.strokeWidth: -1,
+                NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 45)!
+            ])
+            label.position = CGPoint(x: self.frame.midX, y: self.frame.midY+108)
+            configureStars()
+            
+        } else {
+            label.attributedText = NSMutableAttributedString(string: "Você Perdeu", attributes: [
+                NSAttributedString.Key.strokeWidth: -1,
+                NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 45)!
+            ])
+            label.position = CGPoint(x: self.frame.midX, y: self.frame.midY+60)
+        }
+        label.zPosition = 11
+        addChild(label)
+    }
+    
+    private func configureStars() {
+        self.addChild(self.stars)
+        stars.zPosition = 11
+        
+        let paddingHorizontal = self.modalNode.frame.width/4
+        let paddingVertical = self.stars.firstStar.frame.height/2 + 8
+        self.stars.firstStar.position = CGPoint(x: self.frame.midX-paddingHorizontal,
+                                                y: self.modalNode.frame.midY+paddingVertical)
+
+        self.stars.secondStar.position = CGPoint(x: self.frame.midX,
+                                                 y: self.modalNode.frame.midY+paddingVertical+24)
+
+        self.stars.thirdStar.position = CGPoint(x: self.frame.midX+paddingHorizontal,
+                                                y: self.modalNode.frame.midY+paddingVertical)
     }
 
     func tapped() {
