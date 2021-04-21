@@ -7,7 +7,7 @@
 
 import SpriteKit
 import AVFoundation
-// swiftlint:disable line_length
+// swiftlint:disable line_length type_body_length function_body_length
 
 class GamePlayScene: SKScene {
     
@@ -118,7 +118,6 @@ class GamePlayScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        self.view?.showsNodeCount = true
         super.didMove(to: view)
         guard let backgroundEmptySprite = backgroundEmpty.component(ofType: VisualComponent.self) else {fatalError()}
 

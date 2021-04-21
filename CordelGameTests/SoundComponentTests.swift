@@ -74,7 +74,7 @@ class SoundComponentTests: XCTestCase {
     sut.temporaryVolume(volume: 0.25, duration: 2.0)
 
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.1) {
-        if self.sut.sound.volume == 1 { //XCTAssertEqual(sut.sound.volume, 1.0)
+        if self.sut.sound.volume == 1 { // XCTAssertEqual(sut.sound.volume, 1.0)
             exp.fulfill()
         }
     }

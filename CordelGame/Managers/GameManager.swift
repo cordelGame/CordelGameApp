@@ -59,4 +59,13 @@ class GameManager {
             return 0
         }
     }
+    
+    func saveScore() -> Int {
+        let points = UserDefaults.standard.integer(forKey: "points")
+        let score =  self.getScore()
+        if score > points {
+            UserDefaults.standard.setValue(score, forKey: "points")
+        }
+        return score
+    }
 }

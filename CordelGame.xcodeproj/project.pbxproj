@@ -15,7 +15,6 @@
 		1A166FBD261DFB6100A9A1ED /* shot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A166FBC261DFB6000A9A1ED /* shot.wav */; };
 		1A28D4B4260392880099C03C /* AnimateCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B3260392880099C03C /* AnimateCharacter.swift */; };
 		1A28D4B9260396160099C03C /* AnimationCharacterComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */; };
-		1A4CF728262F027F002F9BDF /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1A4CF727262F027F002F9BDF /* background.mp3 */; };
 		1A4CF72D262F0287002F9BDF /* gameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1A4CF72C262F0287002F9BDF /* gameOver.mp3 */; };
 		1A584D0C260A1B520019DA2E /* SoundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A584D0B260A1B520019DA2E /* SoundComponent.swift */; };
 		1A7D031D26121D4F001BF309 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D031C26121D4F001BF309 /* AudioFile.swift */; };
@@ -27,6 +26,8 @@
 		1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */; };
 		1AD4E99C2614BB47008E1410 /* corruptedFile.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4E99B2614BB47008E1410 /* corruptedFile.wav */; };
 		56305E4026304FE900E06332 /* FinishNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56305E3F26304FE900E06332 /* FinishNode.swift */; };
+		56305E48263067D300E06332 /* triangulo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56305E47263067D300E06332 /* triangulo.wav */; };
+		56305E5026306C1F00E06332 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 56305E4F26306C1F00E06332 /* background.mp3 */; };
 		566392B2260E0F210054B59C /* DrawComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B1260E0F210054B59C /* DrawComponent.swift */; };
 		566392B7260E10E90054B59C /* CordeisLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B6260E10E90054B59C /* CordeisLevel.swift */; };
 		566392BC260E2D460054B59C /* CordeisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392BB260E2D460054B59C /* CordeisData.swift */; };
@@ -90,7 +91,6 @@
 		1A166FBC261DFB6000A9A1ED /* shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shot.wav; sourceTree = "<group>"; };
 		1A28D4B3260392880099C03C /* AnimateCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCharacter.swift; sourceTree = "<group>"; };
 		1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponentTests.swift; sourceTree = "<group>"; };
-		1A4CF727262F027F002F9BDF /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		1A4CF72C262F0287002F9BDF /* gameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameOver.mp3; sourceTree = "<group>"; };
 		1A584D0B260A1B520019DA2E /* SoundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundComponent.swift; sourceTree = "<group>"; };
 		1A7D031C26121D4F001BF309 /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponent.swift; sourceTree = "<group>"; };
 		1AD4E99B2614BB47008E1410 /* corruptedFile.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = corruptedFile.wav; sourceTree = "<group>"; };
 		56305E3F26304FE900E06332 /* FinishNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishNode.swift; sourceTree = "<group>"; };
+		56305E47263067D300E06332 /* triangulo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = triangulo.wav; sourceTree = "<group>"; };
+		56305E4F26306C1F00E06332 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		566392B1260E0F210054B59C /* DrawComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawComponent.swift; sourceTree = "<group>"; };
 		566392B6260E10E90054B59C /* CordeisLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisLevel.swift; sourceTree = "<group>"; };
 		566392BB260E2D460054B59C /* CordeisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisData.swift; sourceTree = "<group>"; };
@@ -173,8 +175,9 @@
 		1A97C9AB260B72B5001959ED /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				56305E4F26306C1F00E06332 /* background.mp3 */,
+				56305E47263067D300E06332 /* triangulo.wav */,
 				1AD4E99B2614BB47008E1410 /* corruptedFile.wav */,
-				1A4CF727262F027F002F9BDF /* background.mp3 */,
 				1A4CF72C262F0287002F9BDF /* gameOver.mp3 */,
 				1A166FA8261DEA4C00A9A1ED /* onca.wav */,
 				1A166FAD261DEF8400A9A1ED /* cobra.wav */,
@@ -473,8 +476,9 @@
 				1A166FB8261DEF9A00A9A1ED /* calango.wav in Resources */,
 				1A166FA9261DEA4C00A9A1ED /* onca.wav in Resources */,
 				1A166FBD261DFB6100A9A1ED /* shot.wav in Resources */,
+				56305E5026306C1F00E06332 /* background.mp3 in Resources */,
 				882E92272600D49800FD4825 /* EntitiesEmpty in Resources */,
-				1A4CF728262F027F002F9BDF /* background.mp3 in Resources */,
+				56305E48263067D300E06332 /* triangulo.wav in Resources */,
 				882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

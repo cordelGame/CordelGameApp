@@ -31,7 +31,7 @@ enum EnemiesLevel1: EnemyLevel {
         case .onca:
             self = .onca
             return Enemy(name: "Onca(1)", widthMultiplier: 0.64, heightMultiplier: 0.28,
-                         positionX: 50, positionY: 5, health: 4, sound: .onca, cordeis: .hard)
+                         positionX: 100, positionY: 5, health: 4, sound: .onca, cordeis: .hard)
         }
     }
 }

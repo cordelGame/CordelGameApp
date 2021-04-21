@@ -61,8 +61,8 @@ class MenuScene: SKScene {
     let firstTitleName: SKLabelNode = {
         let label = SKLabelNode()
 
-        label.attributedText = NSMutableAttributedString(string: "Cordel", attributes: [
-            NSAttributedString.Key.strokeWidth: -1,
+        label.attributedText = NSMutableAttributedString(string: "Cangaceira", attributes: [
+            NSAttributedString.Key.strokeWidth: -2,
             NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 50)!
         ])
 
@@ -72,9 +72,9 @@ class MenuScene: SKScene {
     let secondTitleName: SKLabelNode = {
         let label = SKLabelNode()
 
-        label.attributedText = NSMutableAttributedString(string: "Encantado", attributes: [
+        label.attributedText = NSMutableAttributedString(string: "A história de Virgulina", attributes: [
             NSAttributedString.Key.strokeWidth: -1,
-            NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 50)!
+            NSAttributedString.Key.font: UIFont(name: "LoveYaLikeASister-Regular", size: 25)!
         ])
 
         return label
@@ -138,7 +138,7 @@ extension MenuScene {
 
         let halfSizeButton = self.soundButton.buttonSprite.size.height/2
         self.soundButton.position = CGPoint(x: self.frame.maxX - halfSizeButton,
-                                            y: self.firstTitleName.frame.maxY + halfSizeButton)
+                                            y: self.firstTitleName.frame.maxY + halfSizeButton*2 )
         self.soundButton.setScale(0.8)
         
         self.soundButton.wasTapped = {
@@ -170,7 +170,7 @@ extension MenuScene {
         self.addChild(firstTitleName)
         self.addChild(secondTitleName)
         
-        self.firstTitleName.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 150)
-        self.secondTitleName.position = CGPoint(x: self.frame.midX, y: self.firstTitleName.frame.midY - 70)
+        self.firstTitleName.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 190)
+        self.secondTitleName.position = CGPoint(x: self.frame.midX, y: self.firstTitleName.frame.midY - 50)
     }
 }

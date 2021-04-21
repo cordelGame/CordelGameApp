@@ -7,7 +7,6 @@
 
 import Foundation
 import SpriteKit
-// swiftlint:disable line_length
 
 class FinishNode: SKNode {
     var gameScene: GamePlayScene
@@ -81,7 +80,7 @@ class FinishNode: SKNode {
     
     private func configureStars() {
         let stars: StarsNode = {
-            let stars = StarsNode(classification: self.gameScene.gameManager.getScore())
+            let stars = StarsNode(classification: self.gameScene.gameManager.saveScore())
             return stars
         }()
         self.addChild(stars)
