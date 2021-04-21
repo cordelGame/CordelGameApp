@@ -134,6 +134,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4CF74326305531002F9BDF /* ComponentsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2AA84852600EB4700D24369 /* VisualComponentTests.swift */,
+				1A0BC7872602279B0046A146 /* HealthComponentTests.swift */,
+				1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */,
+			);
+			path = ComponentsTests;
+			sourceTree = "<group>";
+		};
+		1A4CF74426305609002F9BDF /* EntitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A8381752604E35C007E251E /* CharacterEntityTests.swift */,
+				A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */,
+			);
+			path = EntitiesTests;
+			sourceTree = "<group>";
+		};
 		882E91B125FFAA1200FD4825 = {
 			isa = PBXGroup;
 			children = (
@@ -176,13 +195,10 @@
 		882E91D325FFAA1400FD4825 /* CordelGameTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A4CF74326305531002F9BDF /* ComponentsTests */,
+				1A4CF74426305609002F9BDF /* EntitiesTests */,
 				882E91D425FFAA1400FD4825 /* CordelGameTests.swift */,
 				882E91D625FFAA1400FD4825 /* Info.plist */,
-				A2AA84852600EB4700D24369 /* VisualComponentTests.swift */,
-				1A0BC7872602279B0046A146 /* HealthComponentTests.swift */,
-				1A28D4B8260396160099C03C /* AnimationCharacterComponentTests.swift */,
-				1A8381752604E35C007E251E /* CharacterEntityTests.swift */,
-				A2AA84982600F42700D24369 /* LandscapeEntityTests.swift */,
 			);
 			path = CordelGameTests;
 			sourceTree = "<group>";
