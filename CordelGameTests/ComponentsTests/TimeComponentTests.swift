@@ -15,6 +15,7 @@ class TimeComponentTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        
         node = SKSpriteNode(imageNamed: "blackBar")
         sut = TimeComponent(node: node)
     }

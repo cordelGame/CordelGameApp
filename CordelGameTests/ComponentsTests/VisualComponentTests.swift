@@ -14,6 +14,7 @@ class VisualComponentTests: XCTestCase {
 
     override func setUp() {
       super.setUp()
+        
       sut = VisualComponent(assetName: "cobra")
     }
 
@@ -25,6 +26,12 @@ class VisualComponentTests: XCTestCase {
       let sprite: SKSpriteNode = sut.node
       sut.changeAsset(assetName: "personagem")
       XCTAssertNotEqual(sprite, sut.node)
+    }
+
+    func test_initWithCoder_returnNil() {
+      sut = VisualComponent(coder: NSCoder())
+
+      XCTAssertNil(sut)
     }
 
     override func tearDown() {
