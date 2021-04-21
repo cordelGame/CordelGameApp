@@ -27,6 +27,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         self.setup()
+        
+        let shared = SoundConfiguration.shared.backgroundSound.configureSound(soundStyle: .background)
+        SoundConfiguration.shared.backgroundSound.playSound()
     }
 
     private func setup() {

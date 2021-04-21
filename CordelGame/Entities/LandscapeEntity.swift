@@ -11,9 +11,12 @@ class LandscapeEntity: GKEntity {
 
     init(assetName: String) {
         super.init()
-        
+
+//        let soundComponent = SoundComponent()
         let visualComponent = VisualComponent(assetName: assetName)
+        
         self.addComponent(visualComponent)
+//        self.addComponent(soundComponent)
     }
 
     required init?(coder: NSCoder) {

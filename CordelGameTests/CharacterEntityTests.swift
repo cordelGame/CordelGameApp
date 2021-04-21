@@ -11,7 +11,7 @@ import XCTest
 class CharacterEntityTests: XCTestCase {
 
   func test_init_notNil() {
-    let sut: CharacterEntity = CharacterEntity(assetName: "Cobra", health: 2)
+    let sut: CharacterEntity = CharacterEntity(assetName: "Cobra", health: 2, sound: .cobra)
 
     XCTAssertNotNil(sut)
   }

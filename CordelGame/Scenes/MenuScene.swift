@@ -33,6 +33,11 @@ class MenuScene: SKScene {
     
     let soundButton: ButtonNode = {
         let sprite = ButtonNode(spriteName: "soundButton")
+        sprite.secondSpriteName = "mutedButton"
+        
+        if SoundConfiguration.shared.mute {
+            sprite.handleTouch()
+        }
         return sprite
     }()
 
@@ -85,6 +90,7 @@ class MenuScene: SKScene {
         self.configureStars()
         self.configureGameName()
         self.configureSoundButton()
+        
     }
 }
 
@@ -105,6 +111,10 @@ extension MenuScene {
     private func configureButtons() {
         self.addChild(self.leftButton)
         self.addChild(self.rightButton)
+        
+        self.leftButton.isHidden = true
+        self.rightButton.alpha = 0.2
+        self.rightButton.isUserInteractionEnabled = false
         
         let spacing = self.previewLevel.frame.minX-self.leftButton.buttonSprite.frame.width
         self.leftButton.position = CGPoint(x: self.previewLevel.frame.minX-spacing, y: self.frame.midY)
@@ -130,6 +140,15 @@ extension MenuScene {
         self.soundButton.position = CGPoint(x: self.frame.maxX - halfSizeButton,
                                             y: self.firstTitleName.frame.maxY + halfSizeButton)
         self.soundButton.setScale(0.8)
+        
+        self.soundButton.wasTapped = {
+            if SoundConfiguration.shared.mute {
+                SoundConfiguration.shared.backgroundSound.playSound()
+            } else {
+                SoundConfiguration.shared.backgroundSound.pauseSound()
+            }
+            SoundConfiguration.shared.mute = !SoundConfiguration.shared.mute
+        }
     }
 
     private func configureStars() {

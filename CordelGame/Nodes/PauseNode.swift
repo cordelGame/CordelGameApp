@@ -20,7 +20,15 @@ class PauseNode: SKNode {
     
     var restartButton = ButtonNode(spriteName: "backButton")
     
-    var soundOnButton = ButtonNode(spriteName: "soundButton")
+    var soundOnButton: ButtonNode = {
+        let sprite = ButtonNode(spriteName: "soundButton")
+        sprite.secondSpriteName = "mutedButton"
+        
+        if SoundConfiguration.shared.mute {
+            sprite.handleTouch()
+        }
+        return sprite
+    }()
     
     var soundOffButton = ButtonNode(spriteName: "mutedButton")
     
@@ -31,6 +39,7 @@ class PauseNode: SKNode {
         setupPlayButton()
         setupHomeButton()
         setupRestartButton()
+        setupSoundButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -58,7 +67,6 @@ class PauseNode: SKNode {
     }
     
     private func setupPlayButton() {
-        
         self.playButton.wasTapped = {
             self.gameScene.overlay.isHidden = true
             self.isHidden = true
@@ -69,6 +77,7 @@ class PauseNode: SKNode {
     
     private func setupHomeButton() {
         self.homeButton.wasTapped = {
+            self.gameScene.removeAllChildren()
             self.gameScene.navigationDelegate?.navigate(to: .menu)
         }
     }
@@ -76,6 +85,17 @@ class PauseNode: SKNode {
     private func setupRestartButton() {
         self.restartButton.wasTapped = {
             self.gameScene.navigationDelegate?.navigate(to: .game)
+        }
+    }
+    
+    private func setupSoundButton() {
+        self.soundOnButton.wasTapped = {
+            if SoundConfiguration.shared.mute {
+                SoundConfiguration.shared.backgroundSound.playSound()
+            } else {
+                SoundConfiguration.shared.backgroundSound.pauseSound()
+            }
+            SoundConfiguration.shared.mute = !SoundConfiguration.shared.mute
         }
     }
 }

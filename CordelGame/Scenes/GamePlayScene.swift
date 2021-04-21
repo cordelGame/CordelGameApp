@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 // swiftlint:disable line_length
 
 class GamePlayScene: SKScene {
@@ -13,18 +14,24 @@ class GamePlayScene: SKScene {
     weak var navigationDelegate: Navigation?
     
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
+
     let backgroundEmpty: LandscapeEntity = LandscapeEntity(assetName: "backgroungEmpty")
 
-    let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1)
+    let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1, sound: .nullURL)
     lazy var enemy: CharacterEntity = {
         let configEnemy = self.gameManager.getEnemy()
-        var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health)
+        var characterEntity = CharacterEntity(assetName: configEnemy.name, health: configEnemy.health, sound: configEnemy.sound)
 
         guard let enemySprite = characterEntity.component(ofType: VisualComponent.self) else {fatalError()}
+        guard let enemySound = characterEntity.component(ofType: SoundComponent.self) else {fatalError()}
 
         enemySprite.node.anchorPoint = CGPoint(x: 1, y: 0)
         enemySprite.node.size.width = self.frame.width * configEnemy.widthMultiplier
         enemySprite.node.size.height = self.frame.height * configEnemy.heightMultiplier
+
+        enemySound.configureSound(soundStyle: configEnemy.sound)
+        enemySound.changeVolume(volume: 1.0)
+        enemySound.playSound()
 
         return characterEntity
     }()
@@ -47,6 +54,10 @@ class GamePlayScene: SKScene {
         return cangaceira.component(ofType: HealthComponent.self)!
     }
 
+    var cangaceiraSoundComponent: SoundComponent {
+        return cangaceira.component(ofType: SoundComponent.self)!
+    }
+
     var enemyVisualComponent: VisualComponent {
         return enemy.component(ofType: VisualComponent.self)!
     }
@@ -54,6 +65,14 @@ class GamePlayScene: SKScene {
     var enemyHelthComponent: HealthComponent {
         return enemy.component(ofType: HealthComponent.self)!
     }
+
+    var enemySoundComponent: SoundComponent {
+        return enemy.component(ofType: SoundComponent.self)!
+    }
+
+//    var landscapeSoundComponent: SoundComponent {
+//        return landScape.component(ofType: SoundComponent.self)!
+//    }
 
     let blackBar: TimeBarEntity = TimeBarEntity("blackBar")
     let rectangle: TimeBarEntity = TimeBarEntity("rectangle")
@@ -80,11 +99,15 @@ class GamePlayScene: SKScene {
         self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
         self.enemyVisualComponent.node.size.width = self.frame.width * configEnemy.widthMultiplier
         self.enemyVisualComponent.node.size.height = self.frame.height * configEnemy.heightMultiplier
-        
-        self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
-
         enemyVisualComponent.node.position = CGPoint(x: landScapeVisualComponent.node.frame.maxX + configEnemy.positionX,
                                                      y: landScapeVisualComponent.node.frame.minY + configEnemy.positionY)
+
+        self.enemyHelthComponent.setHelth(newHealth: configEnemy.health)
+
+//        self.landscapeSoundComponent.temporaryVolume(volume: 0.25, duration: 2.0)
+
+        self.enemySoundComponent.configureSound(soundStyle: configEnemy.sound)
+        self.enemySoundComponent.playSound()
     }
     
     lazy var blackBarAction = self.blackBar.component(ofType: TimeComponent.self)!
@@ -97,8 +120,8 @@ class GamePlayScene: SKScene {
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
         super.didMove(to: view)
-
         guard let backgroundEmptySprite = backgroundEmpty.component(ofType: VisualComponent.self) else {fatalError()}
+
         guard let cangaceiraSprite = cangaceira.component(ofType: VisualComponent.self) else {fatalError()}
 
         guard let blackBarSprite = blackBar.component(ofType: VisualComponent.self) else {fatalError()}
@@ -129,13 +152,16 @@ class GamePlayScene: SKScene {
         button3 = drawingControl.button3VisualComponent.node
         button4 = drawingControl.button4VisualComponent.node
         
+//        landscapeSoundComponent.configureSound(soundStyle: .background)
+//        landscapeSoundComponent.playSound()
+
         backgroundEmptySprite.node.anchorPoint = CGPoint(x: 0.5, y: 0)
         backgroundEmptySprite.node.position = CGPoint(x: self.frame.midX, y: self.frame.minY)
 
         landScapeVisualComponent.node.anchorPoint = CGPoint(x: 0, y: 1)
         landScapeVisualComponent.node.position = CGPoint(x: self.frame.minX, y: self.frame.maxY)
         landScapeVisualComponent.node.size = CGSize(width: self.frame.width, height: self.frame.height/2)
-        
+
         cangaceiraSprite.node.anchorPoint = CGPoint(x: 0, y: 0)
         cangaceiraSprite.node.position = CGPoint(x: landScapeVisualComponent.node.frame.minX + 30, y: landScapeVisualComponent.node.frame.minY + 5)
         cangaceiraSprite.node.size.width = self.frame.width * 0.3691
@@ -186,6 +212,8 @@ class GamePlayScene: SKScene {
         shape.name = "shape"
         
         addChild(shape)
+        shape.name = "shape"
+
         addChild(pauseButton)
         addChild(overlay)
         overlay.isHidden = true
@@ -283,7 +311,9 @@ class GamePlayScene: SKScene {
         if checkVictory {
             blackBarAction.stop(width: self.frame.width)
             enemyHelthComponent.hit()
-            
+            cangaceiraSoundComponent.configureSound(soundStyle: .shot)
+            cangaceiraSoundComponent.playSound()
+
             if enemyHelthComponent.notAlive() {
                 self.nextEnemy()
             }
