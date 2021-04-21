@@ -18,7 +18,7 @@ class VisualComponentTests: XCTestCase {
       sut = VisualComponent(assetName: "cobra")
     }
 
-    func test_create_notNil() {
+    func test_init_notNil() {
         XCTAssertNotNil(sut)
     }
 

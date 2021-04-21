@@ -19,7 +19,7 @@ class DrawComponentTests: XCTestCase {
         sut = DrawComponent(visualComponent: visualComponent)
     }
 
-    func test_create_notNil() {
+    func test_init_notNil() {
         XCTAssertNotNil(sut)
     }
 

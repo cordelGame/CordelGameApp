@@ -17,7 +17,7 @@ class LandscapeEntityTests: XCTestCase {
       sut = LandscapeEntity(assetName: "background")
     }
 
-    func test_create_notNil() {
+    func test_init_notNil() {
         XCTAssertNotNil(sut)
     }
 
