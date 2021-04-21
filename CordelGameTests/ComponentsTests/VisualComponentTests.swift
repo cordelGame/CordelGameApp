@@ -13,6 +13,7 @@ class VisualComponentTests: XCTestCase {
     var sut: VisualComponent!
 
     override func setUp() {
+      super.setUp()
       sut = VisualComponent(assetName: "cobra")
     }
 
