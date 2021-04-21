@@ -26,6 +26,7 @@
 		1ACFE30A2600F11A000AEEE0 /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */; };
 		1ACFE30F2600F1B9000AEEE0 /* AnimationCharacterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */; };
 		1AD4E99C2614BB47008E1410 /* corruptedFile.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4E99B2614BB47008E1410 /* corruptedFile.wav */; };
+		56305E4026304FE900E06332 /* FinishNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56305E3F26304FE900E06332 /* FinishNode.swift */; };
 		566392B2260E0F210054B59C /* DrawComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B1260E0F210054B59C /* DrawComponent.swift */; };
 		566392B7260E10E90054B59C /* CordeisLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B6260E10E90054B59C /* CordeisLevel.swift */; };
 		566392BC260E2D460054B59C /* CordeisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392BB260E2D460054B59C /* CordeisData.swift */; };
@@ -100,6 +101,7 @@
 		1ACFE3092600F11A000AEEE0 /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
 		1ACFE30E2600F1B9000AEEE0 /* AnimationCharacterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCharacterComponent.swift; sourceTree = "<group>"; };
 		1AD4E99B2614BB47008E1410 /* corruptedFile.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = corruptedFile.wav; sourceTree = "<group>"; };
+		56305E3F26304FE900E06332 /* FinishNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishNode.swift; sourceTree = "<group>"; };
 		566392B1260E0F210054B59C /* DrawComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawComponent.swift; sourceTree = "<group>"; };
 		566392B6260E10E90054B59C /* CordeisLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisLevel.swift; sourceTree = "<group>"; };
 		566392BB260E2D460054B59C /* CordeisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisData.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				88AD4792262081B00042D778 /* PauseNode.swift */,
 				A2C5FD5C2620E39900DF4CB3 /* ButtonNode.swift */,
 				A2C5FD7E2620F3DB00DF4CB3 /* StarsNode.swift */,
+				56305E3F26304FE900E06332 /* FinishNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				880F705D2603738200CD3E74 /* TimeComponent.swift in Sources */,
 				A224E0B6262F10300041187F /* Navigation.swift in Sources */,
 				A24B9B59262F58AA001D32A7 /* Router.swift in Sources */,
+				56305E4026304FE900E06332 /* FinishNode.swift in Sources */,
 				A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */,
 				A2C5FD7F2620F3DB00DF4CB3 /* StarsNode.swift in Sources */,
 				88AD4793262081B00042D778 /* PauseNode.swift in Sources */,
@@ -723,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = CordelGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -742,7 +746,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BYHH9YALN2;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = CordelGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

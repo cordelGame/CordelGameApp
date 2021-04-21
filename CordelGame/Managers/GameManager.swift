@@ -13,6 +13,7 @@ class GameManager {
     var enemies: EnemyLevel
     var currentCordel: Cordel!
     var failures: Int = 0
+    var gameOver = false
 
     init(enemyLevel: EnemyLevel) {
         self.enemies = enemyLevel
@@ -30,13 +31,16 @@ class GameManager {
     }
     
     func checkWinCondition(userInput: [String]) -> Bool {
-        let check = self.currentCordel.winCondition.contains(userInput)
+        if !gameOver {
+            let check = self.currentCordel.winCondition.contains(userInput)
 
-        if !check {
-            self.failure()
+            if !check {
+                self.failure()
+            }
+
+            return check
         }
-
-        return check
+        return !gameOver
     }
     
     func failure() {

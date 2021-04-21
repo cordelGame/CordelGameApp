@@ -10,7 +10,7 @@ import GameplayKit
 
 class VisualComponent: GKComponent {
     var node: SKSpriteNode
-    let assetName: String
+    var assetName: String
 
     init(assetName: String) {
         node = SKSpriteNode(imageNamed: assetName)
@@ -20,6 +20,7 @@ class VisualComponent: GKComponent {
     }
 
     func changeAsset(assetName: String) {
+        self.assetName = assetName
         let newAsset = SKTexture(imageNamed: assetName)
 
         let changeAssetAction = SKAction.setTexture(newAsset, resize: true)

@@ -23,7 +23,7 @@ class AnimationCharacterComponent: GKComponent {
 
   func animateCharacter(typeAnimation: AnimateCharacter) {
     let assetName = visualComponent.assetName
-    let stateAsset = SKTexture(imageNamed: "\(assetName)\(typeAnimation.posFix)")
+    let stateAsset = SKTexture(imageNamed: "\(assetName)")
 
     switch typeAnimation {
     case .attack:

@@ -16,6 +16,8 @@ class GamePlayScene: SKScene {
     let landScape: LandscapeEntity = LandscapeEntity(assetName: "background")
 
     let backgroundEmpty: LandscapeEntity = LandscapeEntity(assetName: "backgroungEmpty")
+    let overlay = SKSpriteNode(imageNamed: "Overlay")
+    var flag = false
 
     let cangaceira: CharacterEntity = CharacterEntity(assetName: "Cangaceira(1)", health: 1, sound: .nullURL)
     lazy var enemy: CharacterEntity = {
@@ -91,10 +93,15 @@ class GamePlayScene: SKScene {
     var shape = SKShapeNode()
     
     var gameManager: GameManager = GameManager(enemyLevel: EnemiesLevel1.calango)
+    
+    lazy var blackBarAction = self.blackBar.component(ofType: TimeComponent.self)!
+    var pauseButton = ButtonNode(spriteName: "pauseButton")
+    
+    var pauseNode: PauseNode!
+    lazy var finishNode = FinishNode(gameScene: self)
 
     func nextEnemy() {
         let configEnemy = self.gameManager.getEnemy()
-        
         self.enemyVisualComponent.changeAsset(assetName: configEnemy.name)
         self.enemyVisualComponent.node.anchorPoint = CGPoint(x: 1, y: 0)
         self.enemyVisualComponent.node.size.width = self.frame.width * configEnemy.widthMultiplier
@@ -109,13 +116,6 @@ class GamePlayScene: SKScene {
         self.enemySoundComponent.configureSound(soundStyle: configEnemy.sound)
         self.enemySoundComponent.playSound()
     }
-    
-    lazy var blackBarAction = self.blackBar.component(ofType: TimeComponent.self)!
-    
-    var overlay = SKSpriteNode(imageNamed: "Overlay")
-    var pauseButton = ButtonNode(spriteName: "pauseButton")
-    
-    var pauseNode: PauseNode!
     
     override func didMove(to view: SKView) {
         self.view?.showsNodeCount = true
@@ -310,19 +310,31 @@ class GamePlayScene: SKScene {
         
         if checkVictory {
             blackBarAction.stop(width: self.frame.width)
+            if enemyHelthComponent.health == 4 {
+                flag = true
+            }
             enemyHelthComponent.hit()
             cangaceiraSoundComponent.configureSound(soundStyle: .shot)
             cangaceiraSoundComponent.playSound()
 
             if enemyHelthComponent.notAlive() {
-                self.nextEnemy()
+                if flag {
+                    setupFinishScreen(win: true)
+                } else {
+                    self.nextEnemy()
+                    blackBarAction.timeResize(timeDificult: 5)
+                    let cordel = self.gameManager.getCordel()
+                    cordelVisualComponent.changeAsset(assetName: cordel.name)
+                }
+                
+            } else {
+                blackBarAction.timeResize(timeDificult: 5)
+                let cordel = self.gameManager.getCordel()
+                cordelVisualComponent.changeAsset(assetName: cordel.name)
             }
             
-            let cordel = self.gameManager.getCordel()
-            cordelVisualComponent.changeAsset(assetName: cordel.name)
-            
-            blackBarAction.timeResize(timeDificult: 5)
         }
+        self.initialPoint = CGPoint()
         self.testerVictory = []
     }
     
@@ -354,7 +366,13 @@ class GamePlayScene: SKScene {
     
     func gameOver() {
         cangaceiraHelthComponent.hit()
-        // tela de gameOver
+        self.gameManager.gameOver = true
+        self.setupFinishScreen(win: false)
+    }
+    
+    func setupFinishScreen(win: Bool) {
+        addChild(finishNode)
+        finishNode.configureFinishNodes(win: win)
     }
 
     func tapped() {
