@@ -9,10 +9,25 @@ import XCTest
 @testable import CordelGame
 
 class LandscapeEntityTests: XCTestCase {
+    var sut: LandscapeEntity!
+
+    override func setUp() {
+      super.setUp()
+
+      sut = LandscapeEntity(assetName: "background")
+    }
 
     func test_create_notNil() {
-        let visualComponent = LandscapeEntity(assetName: "background")
+        XCTAssertNotNil(sut)
+    }
 
-        XCTAssertNotNil(visualComponent)
+    func test_initWithCoder_returnNil() {
+      sut = LandscapeEntity(coder: NSCoder())
+
+        XCTAssertNil(sut)
+    }
+
+    override func tearDown() {
+      sut = nil
     }
 }
