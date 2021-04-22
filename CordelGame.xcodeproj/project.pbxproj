@@ -27,7 +27,6 @@
 		1AD4E99C2614BB47008E1410 /* corruptedFile.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4E99B2614BB47008E1410 /* corruptedFile.wav */; };
 		56305E4026304FE900E06332 /* FinishNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56305E3F26304FE900E06332 /* FinishNode.swift */; };
 		56305E48263067D300E06332 /* triangulo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56305E47263067D300E06332 /* triangulo.wav */; };
-		56305E5026306C1F00E06332 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 56305E4F26306C1F00E06332 /* background.mp3 */; };
 		566392B2260E0F210054B59C /* DrawComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B1260E0F210054B59C /* DrawComponent.swift */; };
 		566392B7260E10E90054B59C /* CordeisLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392B6260E10E90054B59C /* CordeisLevel.swift */; };
 		566392BC260E2D460054B59C /* CordeisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566392BB260E2D460054B59C /* CordeisData.swift */; };
@@ -49,6 +48,7 @@
 		88AD4793262081B00042D778 /* PauseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD4792262081B00042D778 /* PauseNode.swift */; };
 		A224E0B6262F10300041187F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224E0B5262F10300041187F /* Navigation.swift */; };
 		A224E0BE262F10E60041187F /* ScenesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224E0BD262F10E60041187F /* ScenesEnum.swift */; };
+		A237AEA82631C451006788B5 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A237AEA72631C451006788B5 /* background.mp3 */; };
 		A24B9B59262F58AA001D32A7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24B9B58262F58AA001D32A7 /* Router.swift */; };
 		A2873FB9261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */; };
 		A2873FBE261F35E800AE83BE /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2873FBD261F35E800AE83BE /* MenuScene.swift */; };
@@ -103,7 +103,6 @@
 		1AD4E99B2614BB47008E1410 /* corruptedFile.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = corruptedFile.wav; sourceTree = "<group>"; };
 		56305E3F26304FE900E06332 /* FinishNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishNode.swift; sourceTree = "<group>"; };
 		56305E47263067D300E06332 /* triangulo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = triangulo.wav; sourceTree = "<group>"; };
-		56305E4F26306C1F00E06332 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		566392B1260E0F210054B59C /* DrawComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawComponent.swift; sourceTree = "<group>"; };
 		566392B6260E10E90054B59C /* CordeisLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisLevel.swift; sourceTree = "<group>"; };
 		566392BB260E2D460054B59C /* CordeisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordeisData.swift; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		88AD4792262081B00042D778 /* PauseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseNode.swift; sourceTree = "<group>"; };
 		A224E0B5262F10300041187F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		A224E0BD262F10E60041187F /* ScenesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesEnum.swift; sourceTree = "<group>"; };
+		A237AEA72631C451006788B5 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		A24B9B58262F58AA001D32A7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A2873FB8261F271B00AE83BE /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
 		A2873FBD261F35E800AE83BE /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		1A97C9AB260B72B5001959ED /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				56305E4F26306C1F00E06332 /* background.mp3 */,
+				A237AEA72631C451006788B5 /* background.mp3 */,
 				56305E47263067D300E06332 /* triangulo.wav */,
 				1AD4E99B2614BB47008E1410 /* corruptedFile.wav */,
 				1A4CF72C262F0287002F9BDF /* gameOver.mp3 */,
@@ -476,7 +476,7 @@
 				1A166FB8261DEF9A00A9A1ED /* calango.wav in Resources */,
 				1A166FA9261DEA4C00A9A1ED /* onca.wav in Resources */,
 				1A166FBD261DFB6100A9A1ED /* shot.wav in Resources */,
-				56305E5026306C1F00E06332 /* background.mp3 in Resources */,
+				A237AEA82631C451006788B5 /* background.mp3 in Resources */,
 				882E92272600D49800FD4825 /* EntitiesEmpty in Resources */,
 				56305E48263067D300E06332 /* triangulo.wav in Resources */,
 				882E91C725FFAA1400FD4825 /* Assets.xcassets in Resources */,
@@ -731,7 +731,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = CordelGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,7 +751,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = D56NG2Q3UR;
 				INFOPLIST_FILE = CordelGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
